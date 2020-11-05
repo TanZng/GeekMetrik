@@ -27,33 +27,33 @@ public class SingUp extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jLabelMETRIK = new javax.swing.JLabel();
+        jLabelGEEK = new javax.swing.JLabel();
         jTextFieldUsuario = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
+        jLabelUsr = new javax.swing.JLabel();
         jTextFieldPassword = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
+        jLabelPass = new javax.swing.JLabel();
         jButtonSignUp = new javax.swing.JButton();
         jButtonRegresar = new javax.swing.JButton();
         jTextFieldEmail = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        jLabelEmail = new javax.swing.JLabel();
+        jLabelNombre = new javax.swing.JLabel();
         jTextFieldNombre = new javax.swing.JTextField();
         jButtonSubirImagen = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(72, 72, 72));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 100)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(186, 126, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Metrik");
-        jLabel1.setToolTipText("");
+        jLabelMETRIK.setFont(new java.awt.Font("Segoe UI", 1, 100)); // NOI18N
+        jLabelMETRIK.setForeground(new java.awt.Color(186, 126, 255));
+        jLabelMETRIK.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelMETRIK.setText("Metrik");
+        jLabelMETRIK.setToolTipText("");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 100)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(104, 164, 255));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Geek");
-        jLabel2.setToolTipText("");
+        jLabelGEEK.setFont(new java.awt.Font("Segoe UI", 1, 100)); // NOI18N
+        jLabelGEEK.setForeground(new java.awt.Color(104, 164, 255));
+        jLabelGEEK.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelGEEK.setText("Geek");
+        jLabelGEEK.setToolTipText("");
 
         jTextFieldUsuario.setBackground(new java.awt.Color(91, 91, 91));
         jTextFieldUsuario.setForeground(new java.awt.Color(91, 91, 91));
@@ -64,10 +64,10 @@ public class SingUp extends javax.swing.JPanel {
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel3.setText("Usuario");
+        jLabelUsr.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabelUsr.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelUsr.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabelUsr.setText("Usuario");
 
         jTextFieldPassword.setBackground(new java.awt.Color(91, 91, 91));
         jTextFieldPassword.setForeground(new java.awt.Color(91, 91, 91));
@@ -78,11 +78,11 @@ public class SingUp extends javax.swing.JPanel {
             }
         });
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel4.setText("Password");
-        jLabel4.setToolTipText("ff");
+        jLabelPass.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabelPass.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelPass.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabelPass.setText("Password");
+        jLabelPass.setToolTipText("ff");
 
         jButtonSignUp.setBackground(new java.awt.Color(186, 126, 255));
         jButtonSignUp.setForeground(new java.awt.Color(255, 255, 255));
@@ -106,15 +106,15 @@ public class SingUp extends javax.swing.JPanel {
             }
         });
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel5.setText("Email");
+        jLabelEmail.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabelEmail.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelEmail.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabelEmail.setText("Email");
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel6.setText("Nombre");
+        jLabelNombre.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabelNombre.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelNombre.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabelNombre.setText("Nombre");
 
         jTextFieldNombre.setBackground(new java.awt.Color(91, 91, 91));
         jTextFieldNombre.setForeground(new java.awt.Color(91, 91, 91));
@@ -135,15 +135,15 @@ public class SingUp extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(483, 483, 483)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)
+                    .addComponent(jLabelMETRIK)
+                    .addComponent(jLabelGEEK)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabelEmail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGap(34, 34, 34)
                             .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -152,8 +152,8 @@ public class SingUp extends javax.swing.JPanel {
                             .addComponent(jButtonSignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel4))
+                                .addComponent(jLabelUsr, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabelPass))
                             .addGap(34, 34, 34)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(jTextFieldPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -165,25 +165,25 @@ public class SingUp extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(116, 116, 116)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabelGEEK, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabelMETRIK, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(46, 46, 46)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelUsr, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldUsuario))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldNombre))
                 .addGap(15, 15, 15)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldEmail))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jTextFieldPassword)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabelPass, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jButtonSubirImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -219,12 +219,12 @@ public class SingUp extends javax.swing.JPanel {
     private javax.swing.JButton jButtonRegresar;
     private javax.swing.JButton jButtonSignUp;
     private javax.swing.JButton jButtonSubirImagen;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabelEmail;
+    private javax.swing.JLabel jLabelGEEK;
+    private javax.swing.JLabel jLabelMETRIK;
+    private javax.swing.JLabel jLabelNombre;
+    private javax.swing.JLabel jLabelPass;
+    private javax.swing.JLabel jLabelUsr;
     private javax.swing.JTextField jTextFieldEmail;
     private javax.swing.JTextField jTextFieldNombre;
     private javax.swing.JTextField jTextFieldPassword;
