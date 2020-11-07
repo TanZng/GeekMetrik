@@ -83,3 +83,24 @@ CREATE TABLE IF NOT EXISTS GeekMetrik.RedSocial (
   ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   URL CHAR(250) NOT NULL,
   Logo LONGBLOB NOT NULL);
+
+-- -----------------------------------------------------
+-- Tabla Reseñas
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS GeekMetrik.Reseñas (
+  ID_Reseña INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  ID_VIdeojuego INT NOT NULL,
+  Username_Geek CHAR(50) NOT NULL,
+  Titulo CHAR(30) NOT NULL,
+  Reseña VARCHAR(500) NOT NULL,
+  Calificacion INT(5) NOT NULL,
+  CONSTRAINT ID_Videojuego
+    FOREIGN KEY (ID_VIdeojuego)
+    REFERENCES GeekMetrik.Videojuego (ID_Videojuego)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT Username_Geek
+    FOREIGN KEY (Username_Geek)
+    REFERENCES GeekMetrik.Geek (Username)
+    ON DELETE NO ACTION
+    ON UPDATE CASCADE);

@@ -2,7 +2,7 @@ package Model.AyU;
 
 /**
  * Clase que define objetos que representan el registro de un usuario
- * @author feth
+ * @author Feth
  * @version 1.0
  */
 public class Registro {
@@ -14,7 +14,33 @@ public class Registro {
     private String contrasena;
     private String username;
     
-    // Metodos
+    /**
+     * Constructor por defecto
+     */
+    public Registro() {
+        
+        // Constructor por defecto
+        
+    }
+    
+     /**
+     * Constructor que define los parámetros del usuario en registro
+     * @param nombre
+     * @param correo
+     * @param imagen_perfil
+     * @param contrasena
+     * @param username 
+     */
+    public Registro( String nombre, String correo, int imagen_perfil, String contrasena, String username ) {
+        
+        this.nombre = nombre;
+        this.correo = correo;
+        this.imagen_perfil = imagen_perfil;
+        this.contrasena = contrasena;
+        this.username = username;
+        
+    }
+    
     /**
      * Metodo que regresa el nombre del usuario en registro
      * @return El nombre del usuario

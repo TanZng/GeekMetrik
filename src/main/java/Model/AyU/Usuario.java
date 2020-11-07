@@ -2,7 +2,7 @@ package Model.AyU;
 
 /**
  * Clase que define objetos que representan a un usuario
- * @author feth
+ * @author Feth
  * @version 1.0
  */
 public class Usuario {
@@ -15,7 +15,33 @@ public class Usuario {
     private String username;
     private boolean acces;
     
-    // Metodos
+    /**
+     * Constructor por defecto
+     */
+    public Usuario() {
+        
+        // Constructor por defecto
+        
+    }
+    
+    /**
+     * Constructor que define los parámetros del usuario
+     * @param nombre
+     * @param correo
+     * @param imagen_perfil
+     * @param contrasena
+     * @param username 
+     */
+    public Usuario( String nombre, String correo, int imagen_perfil, String contrasena, String username ) {
+        
+        this.nombre = nombre;
+        this.correo = correo;
+        this.imagen_perfil = imagen_perfil;
+        this.contrasena = contrasena;
+        this.username = username;
+        
+    }
+    
     /**
      * Metodo que regresa el nombre del usuario
      * @return El nombre del usuario
