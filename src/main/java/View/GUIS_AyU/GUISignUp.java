@@ -25,7 +25,7 @@ public class GUISignUp extends javax.swing.JFrame {
     }
     
     public void resizeImage(){
-        ImageIcon icon = new ImageIcon( GUILogin.class.getResource("/GeekMetrik.png") );
+        ImageIcon icon = new ImageIcon( GUISignUp.class.getResource("/GeekMetrik.png") );
         Image image = icon.getImage();
         Image scale = image.getScaledInstance(labelLogo.getWidth(), labelLogo.getHeight(), Image.SCALE_SMOOTH);
         ImageIcon scaledIcon = new ImageIcon(scale);
