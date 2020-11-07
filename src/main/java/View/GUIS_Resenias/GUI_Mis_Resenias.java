@@ -5,6 +5,8 @@
  */
 package View.GUIS_Resenias;
 
+import View.GUIS_AyU.GUI_MiPerfil;
+
 /**
  *
  * @author thann
@@ -286,6 +288,9 @@ public class GUI_Mis_Resenias extends javax.swing.JFrame {
 
     private void jButtonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegresarActionPerformed
         // TODO add your handling code here:
+        GUI_MiPerfil guiMP = new GUI_MiPerfil();
+        guiMP.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButtonRegresarActionPerformed
 
     private void jTextFieldVideojuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldVideojuegoActionPerformed

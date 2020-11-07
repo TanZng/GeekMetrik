@@ -5,6 +5,8 @@
  */
 package View.GUIS_Catalogo;
 
+import View.GUIS_Resenias.GUI_EscribirResenia;
+
 /**
  *
  * @author thann
@@ -15,9 +17,10 @@ public class GUI_Mostrar_Videojuego extends javax.swing.JFrame {
      * Creates new form GUI_Mostrar_Videojuego
      */
     public GUI_Mostrar_Videojuego() {
-        setLocationRelativeTo(null);
-        this.getContentPane().setBackground(new java.awt.Color(72, 72, 72));
+
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.getContentPane().setBackground(new java.awt.Color(72, 72, 72));
     }
 
     /**
@@ -198,6 +201,9 @@ public class GUI_Mostrar_Videojuego extends javax.swing.JFrame {
 
     private void jButtonSignCrearResActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSignCrearResActionPerformed
         // TODO add your handling code here:
+        GUI_EscribirResenia gui = new GUI_EscribirResenia();
+        gui.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButtonSignCrearResActionPerformed
 
     private void jButtonVerResActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerResActionPerformed
