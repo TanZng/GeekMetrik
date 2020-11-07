@@ -19,7 +19,8 @@ public class GUISignUp extends javax.swing.JFrame {
      */
     public GUISignUp() {
         initComponents();
-                this.getContentPane().setBackground(new java.awt.Color(72, 72, 72));
+        setLocationRelativeTo(null);
+        this.getContentPane().setBackground(new java.awt.Color(72, 72, 72));
         resizeImage();
     }
     
@@ -178,7 +179,6 @@ public class GUISignUp extends javax.swing.JFrame {
                                         .addComponent(jTextFieldNombre, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jTextFieldUsuario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGroup(layout.createSequentialGroup()
-                            .addGap(22, 22, 22)
                             .addComponent(jButtonRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(jButtonSignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -292,18 +292,18 @@ public class GUISignUp extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonRegresar;
-    private javax.swing.JButton jButtonSignUp;
+    public javax.swing.JButton jButtonRegresar;
+    public javax.swing.JButton jButtonSignUp;
     private javax.swing.JLabel jLabelGEEK;
     private javax.swing.JLabel jLabelMETRIK;
-    private javax.swing.JLabel jLabelPassword;
-    private javax.swing.JLabel jLabelPassword1;
-    private javax.swing.JLabel jLabelPassword2;
-    private javax.swing.JLabel jLabelUser;
-    private javax.swing.JTextField jTextFieldMail;
-    private javax.swing.JTextField jTextFieldNombre;
-    private javax.swing.JTextField jTextFieldPassword;
-    private javax.swing.JTextField jTextFieldUsuario;
+    public javax.swing.JLabel jLabelPassword;
+    public javax.swing.JLabel jLabelPassword1;
+    public javax.swing.JLabel jLabelPassword2;
+    public javax.swing.JLabel jLabelUser;
+    public javax.swing.JTextField jTextFieldMail;
+    public javax.swing.JTextField jTextFieldNombre;
+    public javax.swing.JTextField jTextFieldPassword;
+    public javax.swing.JTextField jTextFieldUsuario;
     private javax.swing.JLabel labelLogo;
     // End of variables declaration//GEN-END:variables
 }

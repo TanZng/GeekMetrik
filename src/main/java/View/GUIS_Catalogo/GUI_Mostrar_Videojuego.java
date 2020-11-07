@@ -15,6 +15,7 @@ public class GUI_Mostrar_Videojuego extends javax.swing.JFrame {
      * Creates new form GUI_Mostrar_Videojuego
      */
     public GUI_Mostrar_Videojuego() {
+        setLocationRelativeTo(null);
         this.getContentPane().setBackground(new java.awt.Color(72, 72, 72));
         initComponents();
     }
@@ -30,7 +31,7 @@ public class GUI_Mostrar_Videojuego extends javax.swing.JFrame {
 
         jLabelMETRIK = new javax.swing.JLabel();
         jLabelGEEK = new javax.swing.JLabel();
-        jButtonSignUp1 = new javax.swing.JButton();
+        jButtonRegresar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextAreaDesc = new javax.swing.JTextArea();
@@ -54,13 +55,13 @@ public class GUI_Mostrar_Videojuego extends javax.swing.JFrame {
         jLabelGEEK.setText("Geek");
         jLabelGEEK.setToolTipText("");
 
-        jButtonSignUp1.setBackground(new java.awt.Color(186, 126, 255));
-        jButtonSignUp1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButtonSignUp1.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonSignUp1.setText("regresar");
-        jButtonSignUp1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonRegresar.setBackground(new java.awt.Color(186, 126, 255));
+        jButtonRegresar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jButtonRegresar.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonRegresar.setText("regresar");
+        jButtonRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSignUp1ActionPerformed(evt);
+                jButtonRegresarActionPerformed(evt);
             }
         });
 
@@ -123,7 +124,7 @@ public class GUI_Mostrar_Videojuego extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(22, 22, 22)
-                        .addComponent(jButtonSignUp1)
+                        .addComponent(jButtonRegresar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabelGEEK)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -162,7 +163,7 @@ public class GUI_Mostrar_Videojuego extends javax.swing.JFrame {
                             .addComponent(jLabelMETRIK, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(22, 22, 22)
-                        .addComponent(jButtonSignUp1)))
+                        .addComponent(jButtonRegresar)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -186,9 +187,9 @@ public class GUI_Mostrar_Videojuego extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonSignUp1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSignUp1ActionPerformed
+    private void jButtonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegresarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonSignUp1ActionPerformed
+    }//GEN-LAST:event_jButtonRegresarActionPerformed
 
     private void jTextFieldEstrellasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEstrellasActionPerformed
         // TODO add your handling code here:
@@ -238,16 +239,16 @@ public class GUI_Mostrar_Videojuego extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonSignCrearRes;
-    private javax.swing.JButton jButtonSignUp1;
-    private javax.swing.JButton jButtonVerRes;
-    private javax.swing.JLabel jLabel1;
+    public javax.swing.JButton jButtonRegresar;
+    public javax.swing.JButton jButtonSignCrearRes;
+    public javax.swing.JButton jButtonVerRes;
+    public javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelE;
     private javax.swing.JLabel jLabelGEEK;
     private javax.swing.JLabel jLabelMETRIK;
-    private javax.swing.JLabel jLabelTitulo;
+    public javax.swing.JLabel jLabelTitulo;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextAreaDesc;
-    private javax.swing.JTextField jTextFieldEstrellas;
+    public javax.swing.JTextArea jTextAreaDesc;
+    public javax.swing.JTextField jTextFieldEstrellas;
     // End of variables declaration//GEN-END:variables
 }

@@ -30,12 +30,12 @@ public class GUI_MiPerfil extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButtonSignUp1 = new javax.swing.JButton();
+        jButtonRegresar = new javax.swing.JButton();
         jLabelMETRIK = new javax.swing.JLabel();
         jLabelGEEK = new javax.swing.JLabel();
         jLabelMETRIK1 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jButtonSignUp2 = new javax.swing.JButton();
+        jButtonMisReseñas = new javax.swing.JButton();
         jLabelMETRIK2 = new javax.swing.JLabel();
         jTextFieldNombre = new javax.swing.JTextField();
         jLabelPassword1 = new javax.swing.JLabel();
@@ -43,7 +43,7 @@ public class GUI_MiPerfil extends javax.swing.JFrame {
         jTextFieldApellP = new javax.swing.JTextField();
         jTextFieldApellM = new javax.swing.JTextField();
         jLabelPassword3 = new javax.swing.JLabel();
-        jButtonActualizarNomb = new javax.swing.JButton();
+        jButtonActualizar = new javax.swing.JButton();
         jTextFieldMail = new javax.swing.JTextField();
         jLabelPassword7 = new javax.swing.JLabel();
         jLabelPassword8 = new javax.swing.JLabel();
@@ -52,13 +52,13 @@ public class GUI_MiPerfil extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButtonSignUp1.setBackground(new java.awt.Color(186, 126, 255));
-        jButtonSignUp1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButtonSignUp1.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonSignUp1.setText("regresar");
-        jButtonSignUp1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonRegresar.setBackground(new java.awt.Color(186, 126, 255));
+        jButtonRegresar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jButtonRegresar.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonRegresar.setText("regresar");
+        jButtonRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSignUp1ActionPerformed(evt);
+                jButtonRegresarActionPerformed(evt);
             }
         });
 
@@ -85,13 +85,13 @@ public class GUI_MiPerfil extends javax.swing.JFrame {
         jLabel1.setText("Imagen");
         jLabel1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
-        jButtonSignUp2.setBackground(new java.awt.Color(186, 126, 255));
-        jButtonSignUp2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButtonSignUp2.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonSignUp2.setText("Mis reseñas");
-        jButtonSignUp2.addActionListener(new java.awt.event.ActionListener() {
+        jButtonMisReseñas.setBackground(new java.awt.Color(186, 126, 255));
+        jButtonMisReseñas.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jButtonMisReseñas.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonMisReseñas.setText("Mis reseñas");
+        jButtonMisReseñas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSignUp2ActionPerformed(evt);
+                jButtonMisReseñasActionPerformed(evt);
             }
         });
 
@@ -152,13 +152,13 @@ public class GUI_MiPerfil extends javax.swing.JFrame {
         jLabelPassword3.setText("Apellido M");
         jLabelPassword3.setToolTipText("ff");
 
-        jButtonActualizarNomb.setBackground(new java.awt.Color(104, 164, 255));
-        jButtonActualizarNomb.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButtonActualizarNomb.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonActualizarNomb.setText("Actualizar");
-        jButtonActualizarNomb.addActionListener(new java.awt.event.ActionListener() {
+        jButtonActualizar.setBackground(new java.awt.Color(104, 164, 255));
+        jButtonActualizar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jButtonActualizar.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonActualizar.setText("Actualizar");
+        jButtonActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonActualizarNombActionPerformed(evt);
+                jButtonActualizarActionPerformed(evt);
             }
         });
 
@@ -199,24 +199,23 @@ public class GUI_MiPerfil extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGap(258, 258, 258)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabelMETRIK1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(142, 142, 142))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButtonSignUp1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabelGEEK)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabelMETRIK)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabelMETRIK2, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(33, 33, 33)))
-                        .addComponent(jButtonSignUp2))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGap(258, 258, 258)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabelMETRIK1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(264, 264, 264))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jButtonRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jLabelGEEK)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jLabelMETRIK)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jLabelMETRIK2, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(33, 33, 33)
+                            .addComponent(jButtonMisReseñas)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -238,9 +237,7 @@ public class GUI_MiPerfil extends javax.swing.JFrame {
                                 .addComponent(jTextFieldApellP, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(84, 84, 84)
-                                .addComponent(jButtonActualizarNomb))
+                            .addComponent(jButtonActualizar, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jLabelPassword8, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -255,8 +252,8 @@ public class GUI_MiPerfil extends javax.swing.JFrame {
                     .addComponent(jLabelGEEK, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelMETRIK, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelMETRIK2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonSignUp2)
-                    .addComponent(jButtonSignUp1))
+                    .addComponent(jButtonRegresar)
+                    .addComponent(jButtonMisReseñas))
                 .addGap(6, 6, 6)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -268,7 +265,7 @@ public class GUI_MiPerfil extends javax.swing.JFrame {
                             .addComponent(jLabelPassword8, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonActualizarNomb))
+                        .addComponent(jButtonActualizar))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -291,13 +288,13 @@ public class GUI_MiPerfil extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonSignUp1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSignUp1ActionPerformed
+    private void jButtonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegresarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonSignUp1ActionPerformed
+    }//GEN-LAST:event_jButtonRegresarActionPerformed
 
-    private void jButtonSignUp2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSignUp2ActionPerformed
+    private void jButtonMisReseñasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMisReseñasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonSignUp2ActionPerformed
+    }//GEN-LAST:event_jButtonMisReseñasActionPerformed
 
     private void jTextFieldNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNombreActionPerformed
         // TODO add your handling code here:
@@ -311,9 +308,9 @@ public class GUI_MiPerfil extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldApellMActionPerformed
 
-    private void jButtonActualizarNombActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonActualizarNombActionPerformed
+    private void jButtonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonActualizarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonActualizarNombActionPerformed
+    }//GEN-LAST:event_jButtonActualizarActionPerformed
 
     private void jTextFieldMailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldMailActionPerformed
         // TODO add your handling code here:
@@ -355,10 +352,9 @@ public class GUI_MiPerfil extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton jButtonActualizarNomb;
-    private javax.swing.JButton jButtonActualizarNomb1;
-    public javax.swing.JButton jButtonSignUp1;
-    public javax.swing.JButton jButtonSignUp2;
+    public javax.swing.JButton jButtonActualizar;
+    public javax.swing.JButton jButtonMisReseñas;
+    public javax.swing.JButton jButtonRegresar;
     public javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelGEEK;
     private javax.swing.JLabel jLabelMETRIK;
@@ -367,20 +363,13 @@ public class GUI_MiPerfil extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelPassword1;
     private javax.swing.JLabel jLabelPassword2;
     private javax.swing.JLabel jLabelPassword3;
-    private javax.swing.JLabel jLabelPassword4;
-    private javax.swing.JLabel jLabelPassword5;
-    private javax.swing.JLabel jLabelPassword6;
     private javax.swing.JLabel jLabelPassword7;
     private javax.swing.JLabel jLabelPassword8;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTextArea jTextAreaBio;
     public javax.swing.JTextField jTextFieldApellM;
     public javax.swing.JTextField jTextFieldApellP;
     public javax.swing.JTextField jTextFieldMail;
     public javax.swing.JTextField jTextFieldNombre;
-    private javax.swing.JTextField jTextFieldNombre4;
-    private javax.swing.JTextField jTextFieldNombre5;
-    private javax.swing.JTextField jTextFieldNombre6;
     // End of variables declaration//GEN-END:variables
 }

@@ -20,8 +20,10 @@ public class GUILogin extends javax.swing.JFrame {
     public GUILogin() {
         
         initComponents();
+        setLocationRelativeTo(null);
         this.getContentPane().setBackground(new java.awt.Color(72, 72, 72));
         resizeImage();
+        
     }
     
     public void resizeImage(){
@@ -217,14 +219,14 @@ public class GUILogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonLogin;
-    private javax.swing.JButton jButtonRegresar;
+    public javax.swing.JButton jButtonLogin;
+    public javax.swing.JButton jButtonRegresar;
     private javax.swing.JLabel jLabelGEEK;
     private javax.swing.JLabel jLabelMETRIK;
-    private javax.swing.JLabel jLabelPassword;
-    private javax.swing.JLabel jLabelUser;
-    private javax.swing.JTextField jTextFieldPassword;
-    private javax.swing.JTextField jTextFieldUsuario;
+    public javax.swing.JLabel jLabelPassword;
+    public javax.swing.JLabel jLabelUser;
+    public javax.swing.JTextField jTextFieldPassword;
+    public javax.swing.JTextField jTextFieldUsuario;
     private javax.swing.JLabel labelLogo;
     // End of variables declaration//GEN-END:variables
 }
