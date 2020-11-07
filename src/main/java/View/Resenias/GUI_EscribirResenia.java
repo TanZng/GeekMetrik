@@ -92,7 +92,6 @@ public class GUI_EscribirResenia extends javax.swing.JFrame {
         jLabelPassword2.setText("Titulo");
         jLabelPassword2.setToolTipText("ff");
 
-        jTextFieldTitulo.setEditable(false);
         jTextFieldTitulo.setBackground(new java.awt.Color(91, 91, 91));
         jTextFieldTitulo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jTextFieldTitulo.setForeground(new java.awt.Color(255, 255, 255));
@@ -110,7 +109,6 @@ public class GUI_EscribirResenia extends javax.swing.JFrame {
         jLabelPassword8.setText("Contenido");
         jLabelPassword8.setToolTipText("ff");
 
-        jTextAreaContenido.setEditable(false);
         jTextAreaContenido.setBackground(new java.awt.Color(91, 91, 91));
         jTextAreaContenido.setColumns(20);
         jTextAreaContenido.setForeground(new java.awt.Color(255, 255, 255));
