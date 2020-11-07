@@ -7,6 +7,7 @@ package Model.Codigo_Reseñas;
 
 import java.util.ArrayList;
 import Model.Codigo_Reseñas.Codigo;
+import java.util.Random;
 
 /**
  *
@@ -25,5 +26,48 @@ public class GeneradorCodigos {
         ArrayList<Codigo> codigosValidados = new ArrayList<Codigo>(); //Codigos válidos
         status = true; //Online
     }
+
+    public String getSteam_url() {
+        return steam_url;
+    }
+
+    public void setSteam_url(String steam_url) {
+        this.steam_url = steam_url;
+    }
+
+    public ArrayList<Codigo> getCodigosValidados() {
+        return codigosValidados;
+    }
+
+    public void setCodigosValidados(ArrayList<Codigo> codigosValidados) {
+        this.codigosValidados = codigosValidados;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
     
+    public boolean generar_codigo(String admin_username,String admin_password,String geek_username, int id_videojuego){
+        boolean creacion_codigo = false;
+        if(admin_username.equals("Emmy") && admin_password.equals("123")){
+            creacion_codigo = true;
+            char[] chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789".toCharArray();
+            StringBuilder generacion = new StringBuilder(20);
+            Random random = new Random();
+            for (int i = 1; i <= 20; i++) {
+            char construccion = chars[random.nextInt(chars.length)];
+            generacion.append(construccion);
+            if(i%5==0 && i != 20){
+                generacion.append("-");
+            }
+        }
+        String codigo = generacion.toString();
+            
+        }
+        return creacion_codigo;
+    }
 }
