@@ -1,5 +1,5 @@
 # SQL passwd
-Conexion.java
+src/main/java/Utilerias/Conexion.java
 
 #ant specific
 dist/
