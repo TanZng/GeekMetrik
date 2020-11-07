@@ -89,7 +89,7 @@ public class GUI_Mis_Resenias extends javax.swing.JFrame {
         jTextFieldVideojuego.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jTextFieldVideojuego.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldVideojuego.setToolTipText("");
-        jTextFieldVideojuego.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(91, 91, 91), 0));
+        jTextFieldVideojuego.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
         jTextFieldVideojuego.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldVideojuegoActionPerformed(evt);
@@ -107,7 +107,7 @@ public class GUI_Mis_Resenias extends javax.swing.JFrame {
         jTextFieldTitulo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jTextFieldTitulo.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldTitulo.setToolTipText("");
-        jTextFieldTitulo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(91, 91, 91), 0));
+        jTextFieldTitulo.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
         jTextFieldTitulo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldTituloActionPerformed(evt);
@@ -125,7 +125,7 @@ public class GUI_Mis_Resenias extends javax.swing.JFrame {
         jTextAreaContenido.setColumns(20);
         jTextAreaContenido.setForeground(new java.awt.Color(255, 255, 255));
         jTextAreaContenido.setRows(3);
-        jTextAreaContenido.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(91, 91, 91), 0, true));
+        jTextAreaContenido.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
         jScrollPane1.setViewportView(jTextAreaContenido);
 
         jLabelPassword3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -139,7 +139,7 @@ public class GUI_Mis_Resenias extends javax.swing.JFrame {
         jTextFieldEstrellas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jTextFieldEstrellas.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldEstrellas.setToolTipText("");
-        jTextFieldEstrellas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(91, 91, 91), 0));
+        jTextFieldEstrellas.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
         jTextFieldEstrellas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldEstrellasActionPerformed(evt);
@@ -151,7 +151,7 @@ public class GUI_Mis_Resenias extends javax.swing.JFrame {
         jTextFieldLikes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jTextFieldLikes.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldLikes.setToolTipText("");
-        jTextFieldLikes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(91, 91, 91), 0));
+        jTextFieldLikes.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
         jTextFieldLikes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldLikesActionPerformed(evt);
@@ -278,7 +278,7 @@ public class GUI_Mis_Resenias extends javax.swing.JFrame {
                     .addComponent(jTextFieldLikes, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         pack();

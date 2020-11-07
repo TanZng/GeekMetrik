@@ -96,7 +96,7 @@ public class GUI_EscribirResenia extends javax.swing.JFrame {
         jTextFieldTitulo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jTextFieldTitulo.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldTitulo.setToolTipText("");
-        jTextFieldTitulo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(91, 91, 91), 0));
+        jTextFieldTitulo.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
         jTextFieldTitulo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldTituloActionPerformed(evt);
@@ -113,7 +113,7 @@ public class GUI_EscribirResenia extends javax.swing.JFrame {
         jTextAreaContenido.setColumns(20);
         jTextAreaContenido.setForeground(new java.awt.Color(255, 255, 255));
         jTextAreaContenido.setRows(3);
-        jTextAreaContenido.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(91, 91, 91), 0, true));
+        jTextAreaContenido.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
         jScrollPane1.setViewportView(jTextAreaContenido);
 
         jLabelPassword3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -134,6 +134,7 @@ public class GUI_EscribirResenia extends javax.swing.JFrame {
 
         jSpinnerEstrellas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jSpinnerEstrellas.setModel(new javax.swing.SpinnerNumberModel(0, 0, 5, 1));
+        jSpinnerEstrellas.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -198,7 +199,7 @@ public class GUI_EscribirResenia extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jButtonGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jButtonRegresar)))
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         pack();

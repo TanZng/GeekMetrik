@@ -105,7 +105,7 @@ public class GUI_MiPerfil extends javax.swing.JFrame {
         jTextFieldNombre.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jTextFieldNombre.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldNombre.setToolTipText("");
-        jTextFieldNombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(91, 91, 91), 0));
+        jTextFieldNombre.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
         jTextFieldNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldNombreActionPerformed(evt);
@@ -128,7 +128,7 @@ public class GUI_MiPerfil extends javax.swing.JFrame {
         jTextFieldApellP.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jTextFieldApellP.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldApellP.setToolTipText("");
-        jTextFieldApellP.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(91, 91, 91), 0));
+        jTextFieldApellP.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
         jTextFieldApellP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldApellPActionPerformed(evt);
@@ -139,7 +139,7 @@ public class GUI_MiPerfil extends javax.swing.JFrame {
         jTextFieldApellM.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jTextFieldApellM.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldApellM.setToolTipText("");
-        jTextFieldApellM.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(91, 91, 91), 0));
+        jTextFieldApellM.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
         jTextFieldApellM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldApellMActionPerformed(evt);
@@ -166,7 +166,7 @@ public class GUI_MiPerfil extends javax.swing.JFrame {
         jTextFieldMail.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jTextFieldMail.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldMail.setToolTipText("");
-        jTextFieldMail.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(91, 91, 91), 0));
+        jTextFieldMail.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
         jTextFieldMail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldMailActionPerformed(evt);
@@ -189,7 +189,7 @@ public class GUI_MiPerfil extends javax.swing.JFrame {
         jTextAreaBio.setColumns(20);
         jTextAreaBio.setForeground(new java.awt.Color(255, 255, 255));
         jTextAreaBio.setRows(3);
-        jTextAreaBio.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(91, 91, 91), 0, true));
+        jTextAreaBio.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
         jScrollPane1.setViewportView(jTextAreaBio);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

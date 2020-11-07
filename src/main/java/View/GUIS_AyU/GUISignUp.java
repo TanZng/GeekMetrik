@@ -72,6 +72,7 @@ public class GUISignUp extends javax.swing.JFrame {
         jTextFieldUsuario.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jTextFieldUsuario.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldUsuario.setToolTipText("");
+        jTextFieldUsuario.setBorder(javax.swing.BorderFactory.createEmptyBorder(3, 3, 3, 3));
         jTextFieldUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldUsuarioActionPerformed(evt);
@@ -93,6 +94,7 @@ public class GUISignUp extends javax.swing.JFrame {
         jTextFieldPassword.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jTextFieldPassword.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldPassword.setToolTipText("");
+        jTextFieldPassword.setBorder(javax.swing.BorderFactory.createEmptyBorder(3, 3, 3, 3));
         jTextFieldPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldPasswordActionPerformed(evt);
@@ -103,6 +105,7 @@ public class GUISignUp extends javax.swing.JFrame {
         jTextFieldNombre.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jTextFieldNombre.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldNombre.setToolTipText("");
+        jTextFieldNombre.setBorder(javax.swing.BorderFactory.createEmptyBorder(3, 3, 3, 3));
         jTextFieldNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldNombreActionPerformed(evt);
@@ -145,6 +148,7 @@ public class GUISignUp extends javax.swing.JFrame {
         jTextFieldMail.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jTextFieldMail.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldMail.setToolTipText("");
+        jTextFieldMail.setBorder(javax.swing.BorderFactory.createEmptyBorder(3, 3, 3, 3));
         jTextFieldMail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldMailActionPerformed(evt);

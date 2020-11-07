@@ -72,6 +72,7 @@ public class GUILogin extends javax.swing.JFrame {
         jTextFieldUsuario.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jTextFieldUsuario.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldUsuario.setToolTipText("");
+        jTextFieldUsuario.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
         jTextFieldUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldUsuarioActionPerformed(evt);
@@ -87,6 +88,7 @@ public class GUILogin extends javax.swing.JFrame {
         jTextFieldPassword.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jTextFieldPassword.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldPassword.setToolTipText("");
+        jTextFieldPassword.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
         jTextFieldPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldPasswordActionPerformed(evt);

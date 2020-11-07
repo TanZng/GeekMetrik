@@ -73,6 +73,7 @@ public class GUI_Mostrar_Videojuego extends javax.swing.JFrame {
         jTextAreaDesc.setBackground(new java.awt.Color(91, 91, 91));
         jTextAreaDesc.setColumns(20);
         jTextAreaDesc.setRows(5);
+        jTextAreaDesc.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
         jScrollPane1.setViewportView(jTextAreaDesc);
 
         jTextFieldEstrellas.setEditable(false);
