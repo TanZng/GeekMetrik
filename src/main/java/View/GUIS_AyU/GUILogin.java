@@ -82,7 +82,7 @@ public class GUILogin extends javax.swing.JFrame {
         jLabelUser.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabelUser.setForeground(new java.awt.Color(255, 255, 255));
         jLabelUser.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabelUser.setText("Usuario");
+        jLabelUser.setText("Username");
 
         jTextFieldPassword.setBackground(new java.awt.Color(91, 91, 91));
         jTextFieldPassword.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
