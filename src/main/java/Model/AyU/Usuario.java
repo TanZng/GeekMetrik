@@ -129,7 +129,7 @@ public class Usuario {
      */
     public int getID_User() {
         
-       // Código
+       // Falta por implementar
        return 0;
         
     }
@@ -141,7 +141,7 @@ public class Usuario {
      */
     public void setID_User( int id ) {
         
-        // Código
+        // Falta por implementar
         
     }
 
