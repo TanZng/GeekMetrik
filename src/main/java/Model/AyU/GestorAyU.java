@@ -1,6 +1,6 @@
 package Model.AyU;
 
-import Utilerias.Conexion;
+import Model.Utilerias.Conexion;
 import Model.Utilerias.hash;
 import java.sql.Connection;
 import java.io.FileInputStream;
