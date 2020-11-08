@@ -6,6 +6,7 @@
 package View.GUIS_Catalogo;
 
 import View.GUIS_Resenias.GUI_EscribirResenia;
+import View.GUIS_Resenias.GUI_Ver_Resenias;
 
 /**
  *
@@ -213,6 +214,9 @@ public class GUI_Mostrar_Videojuego extends javax.swing.JFrame {
 
     private void jButtonVerResActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerResActionPerformed
         // TODO add your handling code here:
+        GUI_Ver_Resenias gui = new GUI_Ver_Resenias();
+        gui.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButtonVerResActionPerformed
 
     /**

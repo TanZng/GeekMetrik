@@ -131,7 +131,7 @@ public class GUI_Catalogo extends javax.swing.JFrame {
 
         jLabelEstrellas1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabelEstrellas1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelEstrellas1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabelEstrellas1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelEstrellas1.setText("Estrellas");
         jLabelEstrellas1.setToolTipText("");
 
@@ -229,7 +229,7 @@ public class GUI_Catalogo extends javax.swing.JFrame {
 
         jLabelEstrellas2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabelEstrellas2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelEstrellas2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabelEstrellas2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelEstrellas2.setText("Estrellas");
         jLabelEstrellas2.setToolTipText("");
 
@@ -318,7 +318,7 @@ public class GUI_Catalogo extends javax.swing.JFrame {
 
         jLabelEstrellas3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabelEstrellas3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelEstrellas3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabelEstrellas3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelEstrellas3.setText("Estrellas");
         jLabelEstrellas3.setToolTipText("");
 
