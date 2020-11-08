@@ -5,6 +5,7 @@
  */
 package View.GUIS_AyU;
 
+import View.GUIS_Catalogo.GUI_Catalogo;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 
@@ -182,6 +183,9 @@ public class GUILogin extends javax.swing.JFrame {
 
     private void jButtonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegresarActionPerformed
         // TODO add your handling code here:
+        GUI_Catalogo gui = new GUI_Catalogo();
+        gui.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButtonRegresarActionPerformed
 
     /**
@@ -223,12 +227,12 @@ public class GUILogin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton jButtonLogin;
     public javax.swing.JButton jButtonRegresar;
-    private javax.swing.JLabel jLabelGEEK;
-    private javax.swing.JLabel jLabelMETRIK;
+    public javax.swing.JLabel jLabelGEEK;
+    public javax.swing.JLabel jLabelMETRIK;
     public javax.swing.JLabel jLabelPassword;
     public javax.swing.JLabel jLabelUser;
     public javax.swing.JTextField jTextFieldPassword;
     public javax.swing.JTextField jTextFieldUsuario;
-    private javax.swing.JLabel labelLogo;
+    public javax.swing.JLabel labelLogo;
     // End of variables declaration//GEN-END:variables
 }

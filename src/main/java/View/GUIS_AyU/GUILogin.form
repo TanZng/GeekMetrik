@@ -102,6 +102,9 @@
         <Property name="text" type="java.lang.String" value="Metrik"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabelGEEK">
       <Properties>
@@ -115,6 +118,9 @@
         <Property name="text" type="java.lang.String" value="Geek"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldUsuario">
       <Properties>
@@ -235,6 +241,9 @@
       </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="labelLogo">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
   </SubComponents>
 </Form>

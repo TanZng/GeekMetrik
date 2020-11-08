@@ -73,6 +73,7 @@ public class GUI_Mostrar_Videojuego extends javax.swing.JFrame {
         jLabel1.setText("Imagen");
         jLabel1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
+        jTextAreaDesc.setEditable(false);
         jTextAreaDesc.setBackground(new java.awt.Color(91, 91, 91));
         jTextAreaDesc.setColumns(20);
         jTextAreaDesc.setRows(5);
@@ -85,6 +86,7 @@ public class GUI_Mostrar_Videojuego extends javax.swing.JFrame {
         jTextFieldEstrellas.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldEstrellas.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextFieldEstrellas.setText("5");
+        jTextFieldEstrellas.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
         jTextFieldEstrellas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldEstrellasActionPerformed(evt);
@@ -193,6 +195,9 @@ public class GUI_Mostrar_Videojuego extends javax.swing.JFrame {
 
     private void jButtonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegresarActionPerformed
         // TODO add your handling code here:
+        GUI_Catalogo gui = new GUI_Catalogo();
+        gui.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButtonRegresarActionPerformed
 
     private void jTextFieldEstrellasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEstrellasActionPerformed

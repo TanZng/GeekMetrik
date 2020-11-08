@@ -1,5 +1,6 @@
 package View.GUIS_AyU;
 
+import View.GUIS_Catalogo.GUI_Catalogo;
 import View.GUIS_Resenias.GUI_Mis_Resenias;
 
 /*
@@ -292,6 +293,9 @@ public class GUI_MiPerfil extends javax.swing.JFrame {
 
     private void jButtonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegresarActionPerformed
         // TODO add your handling code here:
+        GUI_Catalogo gui = new GUI_Catalogo();
+        gui.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButtonRegresarActionPerformed
 
     private void jButtonMisReseñasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMisReseñasActionPerformed

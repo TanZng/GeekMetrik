@@ -5,6 +5,7 @@
  */
 package View.GUIS_AyU;
 
+import View.GUIS_Catalogo.GUI_Catalogo;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 
@@ -179,8 +180,7 @@ public class GUISignUp extends javax.swing.JFrame {
                                     .addComponent(jTextFieldMail, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(138, 138, 138)
-                                .addComponent(labelLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(labelLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -258,6 +258,10 @@ public class GUISignUp extends javax.swing.JFrame {
 
     private void jButtonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegresarActionPerformed
         // TODO add your handling code here:
+        
+        GUI_Catalogo gui = new GUI_Catalogo();
+        gui.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButtonRegresarActionPerformed
 
     private void jTextFieldMailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldMailActionPerformed
@@ -303,8 +307,8 @@ public class GUISignUp extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton jButtonRegresar;
     public javax.swing.JButton jButtonSignUp;
-    private javax.swing.JLabel jLabelGEEK;
-    private javax.swing.JLabel jLabelMETRIK;
+    public javax.swing.JLabel jLabelGEEK;
+    public javax.swing.JLabel jLabelMETRIK;
     public javax.swing.JLabel jLabelPassword;
     public javax.swing.JLabel jLabelPassword1;
     public javax.swing.JLabel jLabelPassword2;
@@ -313,6 +317,6 @@ public class GUISignUp extends javax.swing.JFrame {
     public javax.swing.JTextField jTextFieldNombre;
     public javax.swing.JTextField jTextFieldPassword;
     public javax.swing.JTextField jTextFieldUsuario;
-    private javax.swing.JLabel labelLogo;
+    public javax.swing.JLabel labelLogo;
     // End of variables declaration//GEN-END:variables
 }
