@@ -3,6 +3,8 @@ package Controller.AyU;
 import Model.AyU.*;
 import Model.Utilerias.hash;
 import View.GUIS_AyU.*;
+import View.GUIS_Catalogo.GUI_Menu_Admin;
+import view.GUIS_Catalogo.*;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -120,11 +122,30 @@ public class OAyU implements ActionListener {
         this.autenticar.setContrasena(contra);
         this.autenticar.setUsername(gui1.jTextFieldUsuario.getText());
         
-        // Extraemos usuarios de la DB y esperamos autenticación
-        if( this.autenticar.autenticar() != null ) {
+        Usuario usr = this.autenticar.autenticar();
         
-            this.gui1.autenticado = this.autenticar.autenticado;
-            JOptionPane.showMessageDialog(null, "Autenticación exitosa!");
+        // Extraemos usuarios de la DB y esperamos autenticación
+        if( usr != null ) {
+        
+            if( usr.getTipo() == 0 ) {
+                
+                this.gui1.autenticado = this.autenticar.autenticado;
+                JOptionPane.showMessageDialog(null, "Bienvenido admin!");
+                
+                // Falta generar el oyente
+                GUI_Menu_Admin admin = new GUI_Menu_Admin();
+                
+                admin.setVisible(true);
+                this.gui.setVisible(false);
+                
+            }
+            
+            else {
+                
+                this.gui1.autenticado = this.autenticar.autenticado;
+                JOptionPane.showMessageDialog(null, "Autenticación exitosa!");
+                
+            }
         
         }
         

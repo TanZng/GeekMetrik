@@ -22,6 +22,7 @@ public class Autenticacion {
     
     private String username;
     private String contrasena;
+    private int tipo;
     public static Usuario autenticado;
     
     /**
@@ -35,9 +36,10 @@ public class Autenticacion {
      * @param contrasena
      * 
      */
-    public Autenticacion(String username, String contrasena) {
+    public Autenticacion(String username, String contrasena, int tipo) {
         this.username = username;
         this.contrasena = contrasena;
+        this.tipo = tipo;
     }
    
     
