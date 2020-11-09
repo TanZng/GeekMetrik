@@ -93,7 +93,7 @@ public class OAyU implements ActionListener {
                 
                 fis = new FileInputStream( imagen );
             
-            geek.setImagen_perfil((int) imagen.length());
+                geek.setImagen_perfil((int) imagen.length());
                 
             }            
             
@@ -111,7 +111,13 @@ public class OAyU implements ActionListener {
             Logger.getLogger(GestorAyU.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             try {
-                fis.close();
+                
+                if( imagen != null) {
+                
+                    fis.close();
+                
+                }   
+
             } catch (IOException ex) {
                 Logger.getLogger(GestorAyU.class.getName()).log(Level.SEVERE, null, ex);
             }
