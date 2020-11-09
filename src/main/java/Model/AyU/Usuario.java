@@ -133,6 +133,7 @@ public class Usuario {
     public int getID_User() {
         
        // Falta por implementar
+        //EL ID será el Username
        return 0;
         
     }

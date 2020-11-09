@@ -1,8 +1,11 @@
 package Controller.OCatalogo;
 
+import Model.AyU.Usuario;
 import Model.Catalogo.Gestor_Catalogo;
 import Model.Catalogo.Videojuego;
+import View.GUIS_AyU.GUILogin;
 import View.GUIS_Catalogo.GUI_Gestionar_Videojuegos;
+//import com.sun.org.apache.xpath.internal.functions.FuncSubstringAfter;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -15,6 +18,7 @@ public class OGestionarVideojuegos implements ActionListener {
     Gestor_Catalogo dao = new Gestor_Catalogo();
     Videojuego vid = new Videojuego();
     GUI_Gestionar_Videojuegos gui = new GUI_Gestionar_Videojuegos();
+    GUILogin login = new GUILogin();
     DefaultTableModel modelo = new DefaultTableModel();
 
     public OGestionarVideojuegos(GUI_Gestionar_Videojuegos gui) {
@@ -25,6 +29,7 @@ public class OGestionarVideojuegos implements ActionListener {
         this.gui.jButtonEditar.addActionListener(this);
         this.gui.jButtonGuardar.addActionListener(this);
         this.gui.jButtonEliminar.addActionListener(this);
+        this.gui.jButtonAgregar.addActionListener(this);
 
         //this.gui.jButtonListar.addActionListener(this);
         gui.jButtonListar.setVisible(false);
@@ -37,6 +42,19 @@ public class OGestionarVideojuegos implements ActionListener {
         //    listar(gui.jTable);
         //    //nuevo();
         //}
+
+        if(actionEvent.getSource() == gui.jButtonAgregar){
+            if (gui.jTextFieldTitulo.getText().equals("") && gui.jTextAreaDesc.getText().equals("")) {
+                JOptionPane.showMessageDialog(gui, "Debe Llenar los datos del Videojuego!!");
+            }
+            else {
+                agregar();
+                limpiarTabla();
+                limpiarCampos();
+                listar(gui.jTable);
+            }
+        }
+
         if (actionEvent.getSource() == gui.jButtonEditar){
             int fila = gui.jTable.getSelectedRow();
             if (fila == -1) {
@@ -74,6 +92,23 @@ public class OGestionarVideojuegos implements ActionListener {
             modelo.addRow(objeto);
         }
         tabla.setModel(modelo);
+    }
+
+    private void agregar() {
+        String titulo = gui.jTextFieldTitulo.getText();
+        String desc = gui.jTextAreaDesc.getText();
+        String gen= String.valueOf(gui.jComboBoxGen.getSelectedItem());
+        Usuario admin = login.autenticado;
+        String id_admin = admin.getUsername();
+        //int tel = Integer.parseInt(guiCliente.jTextFieldTel.getText() );
+
+        int r = dao.aniadir_Videojuego(titulo, desc, gen, id_admin);
+        if (r == 1) {
+            JOptionPane.showMessageDialog(gui, "Videojuego Agregado Con Exito :D");
+        } else {
+            JOptionPane.showMessageDialog(gui, "Error :(");
+        }
+        //listar()
     }
 
     public void modoEditar(int fila){
