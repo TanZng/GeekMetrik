@@ -177,7 +177,7 @@ public class Registro {
             ps.setString(1, geek.getNombre());
             ps.setString(2, geek.getCorreo());
             ps.setBinaryStream(3, imagen, geek.getImagen_perfil());
-            ps.setString(4, contra);
+            ps.setString(4, geek.getContrasena());
             ps.setString(5, geek.getUsername());
             ps.setInt(6, geek.getTipo());
             
