@@ -505,7 +505,7 @@ public class GUI_Catalogo extends javax.swing.JFrame {
         jLabelMETRIK4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabelMETRIK4.setForeground(new java.awt.Color(255, 255, 255));
         jLabelMETRIK4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelMETRIK4.setText("Categorias");
+        jLabelMETRIK4.setText("Generos");
         jLabelMETRIK4.setToolTipText("");
 
         jButtonTerror.setBackground(new java.awt.Color(186, 126, 255));

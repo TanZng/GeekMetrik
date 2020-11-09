@@ -228,7 +228,7 @@ public class GUI_Gestionar_Videojuegos extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Titulo", "Descripcion", "Categoria", "Estrellas", "Admin"
+                "ID", "Titulo", "Descripcion", "Genero", "Estrellas", "Admin"
             }
         ));
         jTable.setGridColor(new java.awt.Color(255, 255, 255));

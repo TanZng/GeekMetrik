@@ -980,7 +980,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Categorias"/>
+            <Property name="text" type="java.lang.String" value="Generos"/>
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
         </Component>
