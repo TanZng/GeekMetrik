@@ -34,6 +34,12 @@ public class GUI_Catalogo extends javax.swing.JFrame {
             if( GUILogin.autenticado.getTipo() == 1 ) {
 
                 JOptionPane.showMessageDialog(null, "Hola usuario!");
+                this.jButtonMiPerfil.setEnabled(true);
+                this.jButtonReclamarCode.setEnabled(true);
+                this.jButtonLogout.setEnabled(true);
+
+                this.jButtonLogin.setVisible(false);
+                this.jButtonSignUp.setVisible(false);
 
             }
 
@@ -48,6 +54,12 @@ public class GUI_Catalogo extends javax.swing.JFrame {
         else {
 
             JOptionPane.showMessageDialog(null, "Hola publico en general!");
+            this.jButtonMiPerfil.setEnabled(false);
+            this.jButtonReclamarCode.setEnabled(false);
+            this.jButtonLogout.setEnabled(false);
+
+            this.jButtonLogin.setVisible(true);
+            this.jButtonSignUp.setVisible(true);
 
         }
     }

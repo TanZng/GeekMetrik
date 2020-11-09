@@ -4,7 +4,7 @@ import Model.AyU.*;
 import Model.Utilerias.hash;
 import View.GUIS_AyU.*;
 import View.GUIS_Catalogo.GUI_Menu_Admin;
-import view.GUIS_Catalogo.*;
+import View.GUIS_Catalogo.*;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;

@@ -70,6 +70,7 @@ public class Gestor_Catalogo {
             ps.setString(1, v.getTitulo());
             ps.setString(2, v.getDescripcion());
             ps.setString(3, v.getId_admin_asociado());
+            ps.setString(4, v.getGenero());
             r = ps.executeUpdate();
             if(r==1){
                 return 1;
