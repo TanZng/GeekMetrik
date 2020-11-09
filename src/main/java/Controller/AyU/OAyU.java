@@ -89,10 +89,14 @@ public class OAyU implements ActionListener {
         
         try {
             
-            fis = new FileInputStream( imagen );
+            if( imagen != null) {
+                
+                fis = new FileInputStream( imagen );
             
             geek.setImagen_perfil((int) imagen.length());
-           
+                
+            }            
+            
             if( this.registrar.efectuarRegistroGeek( this.geek, fis ) ) {
                 
                 JOptionPane.showMessageDialog(null, "Registro exitoso!");
