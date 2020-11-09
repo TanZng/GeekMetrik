@@ -5,6 +5,7 @@
  */
 package View.GUIS_Catalogo;
 
+import Controller.OCatalogo.OGestionarVideojuegos;
 import View.GUIS_AyU.GUISignUp;
 import View.GUIS_AyU.GUI_Gestion_Usuarios;
 import View.GUIS_Resenias.GUI_Gestionar_Resenias;
@@ -249,6 +250,9 @@ public class GUI_Menu_Admin extends javax.swing.JFrame {
     private void jButtonGestVidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGestVidActionPerformed
         // TODO add your handling code here:
         GUI_Gestionar_Videojuegos gui = new GUI_Gestionar_Videojuegos();
+        //GUI_Gestionar_Videojuegos v=new GUI_Gestionar_Videojuegos();
+        OGestionarVideojuegos con=new OGestionarVideojuegos(gui);
+        //v.setVisible(true);
         gui.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButtonGestVidActionPerformed

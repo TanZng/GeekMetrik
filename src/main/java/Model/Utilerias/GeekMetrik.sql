@@ -48,8 +48,8 @@ CREATE TABLE IF NOT EXISTS GeekMetrik.Videojuego (
   Descripción VARCHAR(500) NOT NULL,
   Genero VARCHAR(50) NOT NULL,
   Alias_Admin CHAR(50),
-  Imagen LONGBLOB NOT NULL,
-  Destacado TINYINT NOT NULL,
+  Imagen LONGBLOB NULL,
+  Destacado TINYINT NULL,
   CONSTRAINT Alias_Admin
     FOREIGN KEY (Alias_Admin)
     REFERENCES GeekMetrik.Admin (Alias)

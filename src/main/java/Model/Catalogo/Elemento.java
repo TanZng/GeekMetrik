@@ -7,7 +7,7 @@ public class Elemento {
     private Double estrellas;
     private String descripcion;
     private int imagen_perfil;
-    private int id_admin_asociado;
+    private String id_admin_asociado;
     private boolean destacado;
 
     /**
@@ -22,20 +22,18 @@ public class Elemento {
     /**
      * Contructor que define
      * @param titulo
-     * @param estrellas
      * @param descripcion
      * @param imagen_perfil
      * @param id_admin_asociado
-     * @param destacado
      */
 
-    public Elemento(String titulo, Double estrellas, String descripcion, int imagen_perfil, int id_admin_asociado, boolean destacado) {
+    public Elemento(String titulo, String descripcion, int imagen_perfil, String id_admin_asociado, double estrellas) {
         this.titulo = titulo;
         this.estrellas = estrellas;
         this.descripcion = descripcion;
         this.imagen_perfil = imagen_perfil;
         this.id_admin_asociado = id_admin_asociado;
-        this.destacado = destacado;
+        this.destacado = false;
     }
 
     public String getTitulo() {
@@ -70,11 +68,11 @@ public class Elemento {
         this.imagen_perfil = imagen_perfil;
     }
 
-    public int getId_admin_asociado() {
+    public String getId_admin_asociado() {
         return id_admin_asociado;
     }
 
-    public void setId_admin_asociado(int id_admin_asociado) {
+    public void setId_admin_asociado(String id_admin_asociado) {
         this.id_admin_asociado = id_admin_asociado;
     }
 
