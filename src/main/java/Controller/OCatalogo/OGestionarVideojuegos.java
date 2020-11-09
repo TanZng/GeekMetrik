@@ -50,6 +50,13 @@ public class OGestionarVideojuegos implements ActionListener {
             actualizar();
 
         }
+
+        if(actionEvent.getSource() == gui.jButtonEliminar){
+            eliminar();
+            limpiarTabla();
+            listar(gui.jTable);
+        }
+
     }
 
     public void listar(JTable tabla){
@@ -127,6 +134,19 @@ public class OGestionarVideojuegos implements ActionListener {
         gui.jButtonListar.setEnabled(true);
     }
 
+    public void eliminar() {
+        int fila = gui.jTable.getSelectedRow();
+        if (fila == -1) {
+            JOptionPane.showMessageDialog(gui, "Debe Seleccionar Una Fila!!!");
+        } else {
+            int id = Integer.parseInt((String) gui.jTable.getValueAt(fila, 0).toString());
+            dao.eliminar(id);
+            System.out.println("Se elimino el Juego con id " + id);
+            JOptionPane.showMessageDialog(gui, "Videojuego Eliminado!!!");
+        }
+        limpiarTabla();
+    }
+
 
     public void limpiarCampos(){
         gui.jTextFieldID.setText("");
@@ -136,12 +156,14 @@ public class OGestionarVideojuegos implements ActionListener {
         gui.jComboBoxGen.setSelectedItem("MOBA");
     }
 
-    void limpiarTabla() {
+    public void limpiarTabla() {
         for (int i = 0; i < gui.jTable.getRowCount(); i++) {
             modelo.removeRow(i);
             i = i - 1;
         }
     }
+
+
 
 
 

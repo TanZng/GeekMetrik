@@ -104,6 +104,18 @@ public class Gestor_Catalogo {
         }catch (Exception e) {
         }
         return r;
-
     }
+
+    public int eliminar(int id){
+        int r=0;
+        String sql = String.format("delete from Videojuego where ID_Videojuego= '%d' ", id);
+        try {
+            con=conectar.getConexion();
+            ps=con.prepareStatement(sql);
+            r= ps.executeUpdate();
+        } catch (Exception e) {
+        }
+        return r;
+    }
+
 }
