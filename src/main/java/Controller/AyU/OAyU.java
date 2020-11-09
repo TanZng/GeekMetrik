@@ -117,9 +117,7 @@ public class OAyU implements ActionListener {
     
     public void autenticar() {
         
-        String contra = hash.hash1(gui1.jTextFieldPassword.getText());
-        
-        this.autenticar.setContrasena(contra);
+        this.autenticar.setContrasena(gui1.jTextFieldPassword.getText());
         this.autenticar.setUsername(gui1.jTextFieldUsuario.getText());
         
         Usuario usr = this.autenticar.autenticar();
