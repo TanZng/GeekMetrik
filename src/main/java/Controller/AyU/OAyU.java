@@ -134,7 +134,7 @@ public class OAyU implements ActionListener {
                 GUI_Menu_Admin admin = new GUI_Menu_Admin();
                 
                 admin.setVisible(true);
-                this.gui.setVisible(false);
+                this.gui1.setVisible(false);
                 
             }
             
