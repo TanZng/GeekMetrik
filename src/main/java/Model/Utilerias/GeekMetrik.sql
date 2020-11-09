@@ -46,8 +46,9 @@ CREATE TABLE IF NOT EXISTS GeekMetrik.Videojuego (
   Titulo CHAR(50) NOT NULL,
   Estrellas DOUBLE NULL,
   Descripción VARCHAR(500) NOT NULL,
-  Imagen LONGBLOB NOT NULL,
+  Genero VARCHAR(50) NOT NULL,
   Alias_Admin CHAR(50),
+  Imagen LONGBLOB NOT NULL,
   Destacado TINYINT NOT NULL,
   CONSTRAINT Alias_Admin
     FOREIGN KEY (Alias_Admin)
