@@ -5,12 +5,14 @@
  */
 package View.GUIS_Catalogo;
 
+import Controller.AyU.OAyU;
 import View.GUIS_AyU.GUILogin;
 import View.GUIS_AyU.GUISignUp;
 import View.GUIS_AyU.GUI_MiPerfil;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -26,6 +28,18 @@ public class GUI_Catalogo extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         this.getContentPane().setBackground(new java.awt.Color(72, 72, 72));
         resizeImage("/GeekMetrik.png", labelLogo);
+        
+        if(GUILogin.autenticado != null) {
+            
+            JOptionPane.showMessageDialog(null, "Hola usuario!");
+            
+        }
+        
+        else {
+            
+            JOptionPane.showMessageDialog(null, "Hola publico en general!");
+            
+        }
     }
     
     public void resizeImage(String foto, JLabel label){
@@ -635,6 +649,7 @@ public class GUI_Catalogo extends javax.swing.JFrame {
     private void jButtonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLoginActionPerformed
         // TODO add your handling code here:
         GUILogin gui = new GUILogin();
+        OAyU oyente = new OAyU(gui);
         gui.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButtonLoginActionPerformed
@@ -648,6 +663,7 @@ public class GUI_Catalogo extends javax.swing.JFrame {
 
     private void jButtonSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSignUpActionPerformed
         GUISignUp gui = new GUISignUp();
+        OAyU oyenteAyU = new OAyU(gui);
         gui.setVisible(true);
         this.setVisible(false);
         // TODO add your handling code here:

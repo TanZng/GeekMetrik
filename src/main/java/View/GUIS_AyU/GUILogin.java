@@ -5,6 +5,7 @@
  */
 package View.GUIS_AyU;
 
+import Model.AyU.Usuario;
 import View.GUIS_Catalogo.GUI_Catalogo;
 import java.awt.Image;
 import javax.swing.ImageIcon;
@@ -15,6 +16,8 @@ import javax.swing.ImageIcon;
  */
 public class GUILogin extends javax.swing.JFrame {
 
+    public static Usuario autenticado;
+    
     /**
      * Creates new form GUIL
      */
@@ -106,6 +109,11 @@ public class GUILogin extends javax.swing.JFrame {
         jButtonLogin.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jButtonLogin.setForeground(new java.awt.Color(255, 255, 255));
         jButtonLogin.setText("login");
+        jButtonLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonLoginActionPerformed(evt);
+            }
+        });
 
         jButtonRegresar.setBackground(new java.awt.Color(104, 164, 255));
         jButtonRegresar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -187,6 +195,10 @@ public class GUILogin extends javax.swing.JFrame {
         gui.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButtonRegresarActionPerformed
+
+    private void jButtonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLoginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonLoginActionPerformed
 
     /**
      * @param args the command line arguments

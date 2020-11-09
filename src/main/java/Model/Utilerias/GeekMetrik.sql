@@ -11,7 +11,8 @@ CREATE TABLE IF NOT EXISTS GeekMetrik.Usuario (
   Correo CHAR(50) NOT NULL,
   ImagenPerfil LONGBLOB NULL,
   Contra CHAR(50) NOT NULL,
-  Username CHAR(50) NOT NULL PRIMARY KEY);
+  Username CHAR(50) NOT NULL PRIMARY KEY,
+  TipoUsuario NUMERIC(1) NOT NULL);
 
 -- -----------------------------------------------------
 -- Tabla Geeks

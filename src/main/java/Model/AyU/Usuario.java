@@ -14,6 +14,7 @@ public class Usuario {
     private String contrasena;
     private String username;
     private boolean acces;
+    private int tipo;
     
     /**
      * Constructor por defecto
@@ -31,14 +32,16 @@ public class Usuario {
      * @param imagen_perfil
      * @param contrasena
      * @param username 
+     * @param tipo
      */
-    public Usuario( String nombre, String correo, int imagen_perfil, String contrasena, String username ) {
+    public Usuario( String nombre, String correo, int imagen_perfil, String contrasena, String username, int tipo ) {
         
         this.nombre = nombre;
         this.correo = correo;
         this.imagen_perfil = imagen_perfil;
         this.contrasena = contrasena;
         this.username = username;
+        this.tipo = tipo;
         
     }
     
@@ -160,5 +163,15 @@ public class Usuario {
     public void setAcces( boolean acces ) {
         this.acces = acces;
     }
+
+    public int getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(int tipo) {
+        this.tipo = tipo;
+    }
+    
+    
       
 }

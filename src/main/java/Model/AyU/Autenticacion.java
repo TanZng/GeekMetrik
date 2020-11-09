@@ -5,7 +5,12 @@
  */
 package Model.AyU;
 
+import Model.Utilerias.Conexion;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -17,6 +22,7 @@ public class Autenticacion {
     
     private String username;
     private String contrasena;
+    public static Usuario autenticado;
     
     /**
      * Constructor vacío
@@ -67,18 +73,52 @@ public class Autenticacion {
         this.contrasena = contrasena;
     }
     
-    /**
-     *
-     * @param ListadeUsuarios
-     * @return
-     */
-    public boolean autenticar(ListaUsuarios usuarios){
-        for(int i = 0; i < usuarios.getID_Actual(); i++){
-            if(this.username == usuarios.buscarUsuario(i).getNombre() && this.contrasena == usuarios.buscarUsuario(i).getContrasena()){
-                return true;
+    // Falta implementación
+    public Usuario autenticar() {
+
+        // Conectamos con la base de datos
+        Conexion SQL = new Conexion();
+        Connection con = SQL.getConexion();
+        
+        // Declaramos instruccion para tabla Geek
+        String sql = "SELECT * FROM Usuario WHERE Username = ?";
+        
+        PreparedStatement ps;
+        ResultSet rs;
+        Usuario usr = null;
+        
+        try {
+            
+            con = SQL.getConexion();
+            ps = con.prepareStatement(sql);
+            ps.setString(1, this.username);
+            rs = ps.executeQuery();
+            
+            if( rs.next() ) {
+                
+                if( this.contrasena.equals(rs.getString(6))) {
+                    
+                    String nombre = (rs.getString(1)); 
+                    String correo = (rs.getString(4));
+                    String contra = (rs.getString(6));
+                    String user = (rs.getString(7)); 
+                    int tipo = (rs.getInt(8));
+
+                    usr = new Usuario( nombre, correo, 0, contra, user, tipo );
+                    
+                    System.out.println("Bien!");
+                    this.autenticado = usr;
+                    
+                }
+                
             }
+            
+        } catch (Exception e) {
+            
         }
-        return false;
-    } 
+        
+        return usr;
+        
+    }
     
 }

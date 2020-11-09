@@ -69,9 +69,17 @@ public class ListaUsuarios {
     }
     
     // Falta por implementar
-    public boolean añadirUsuario() {
+    public boolean añadirUsuario( Usuario user ) {
         
-        return true;
+        if( this.usuarios.add(user) ) {
+            
+            this.ID_Actual++;
+            
+            return true;
+            
+        }
+        
+        return false;
         
     }
     

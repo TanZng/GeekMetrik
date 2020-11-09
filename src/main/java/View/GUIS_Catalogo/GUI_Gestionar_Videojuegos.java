@@ -6,6 +6,9 @@
 package View.GUIS_Catalogo;
 
 import Controller.OCatalogo.OGestionarVideojuegos;
+import java.io.File;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 
 /**
  *

@@ -1,5 +1,14 @@
 package Model.AyU;
 
+import Model.Utilerias.Conexion;
+import Model.Utilerias.hash;
+import java.io.FileInputStream;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  * Clase que define objetos que representan el registro de un usuario
  * @author Feth
@@ -13,6 +22,7 @@ public class Registro {
     private int imagen_perfil;
     private String contrasena;
     private String username;
+    private int tipo;
     
     /**
      * Constructor por defecto
@@ -30,14 +40,16 @@ public class Registro {
      * @param imagen_perfil
      * @param contrasena
      * @param username 
+     * @param tipo
      */
-    public Registro( String nombre, String correo, int imagen_perfil, String contrasena, String username ) {
+    public Registro( String nombre, String correo, int imagen_perfil, String contrasena, String username, int tipo ) {
         
         this.nombre = nombre;
         this.correo = correo;
         this.imagen_perfil = imagen_perfil;
         this.contrasena = contrasena;
         this.username = username;
+        this.tipo = tipo;
         
     }
     
@@ -119,6 +131,78 @@ public class Registro {
      */
     public void setUsername( String username ) {
         this.username = username;
+    }
+
+    public int getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(int tipo) {
+        this.tipo = tipo;
+    }
+    
+    /**
+     * Función que registra un Geek en la base de datos de Geek Metrik
+     * @param nombre
+     * @param correo
+     * @param archivoImagen
+     * @param imagen
+     * @param contraseña
+     * @param username
+     * @return True si se registró el Geek o False en caso contrario
+     */
+    public boolean efectuarRegistroGeek( Geek geek, FileInputStream imagen ) {
+        
+        // Encriptamos contrasena
+        String contra = hash.hash1( geek.getContrasena() );
+        
+        // Conectamos con la base de datos
+        Conexion SQL = new Conexion();
+        Connection con = SQL.getConexion();
+        
+        // Declaramos la instruccion de SQL
+        String sql = "INSERT INTO Usuario(Nombre, Correo, ImagenPerfil, Contra, Username, TipoUsuario) VALUES(?, ?, ?, ?, ?, ?)";
+        
+        // Declaramos instruccion para tabla Geek
+        String sqlGeek = "INSERT INTO Geek(Username) VALUES ( ? )";
+        
+        PreparedStatement ps;
+        
+        try {
+            
+            // Preparamos la inserción
+            ps = con.prepareStatement(sql);
+            
+            // Asignamos valores
+            ps.setString(1, geek.getNombre());
+            ps.setString(2, geek.getCorreo());
+            ps.setBinaryStream(3, imagen, geek.getImagen_perfil());
+            ps.setString(4, contra);
+            ps.setString(5, geek.getUsername());
+            ps.setInt(6, geek.getTipo());
+            
+            // Ejecutamos la instrucción ya con sus valores
+            ps.execute();
+            
+            // Preparamos la instrucción para tabla geek
+            ps = con.prepareStatement(sqlGeek);
+            
+            ps.setString(1, geek.getUsername());
+            
+            // Ejecutamos la instrucción ya con sus valores
+            ps.execute();
+            
+            // Si se tuvo éxito
+            return true;
+            
+        } catch ( SQLException ex) {
+            
+            // Si no se tuvo éxito
+            Logger.getLogger(GestorAyU.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+            
+        }
+        
     }
       
 }

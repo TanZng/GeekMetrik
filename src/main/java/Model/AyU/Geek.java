@@ -33,17 +33,11 @@ public class Geek extends Usuario{
      * @param imagen_perfil
      * @param contrasena
      * @param username
-     * @param mis_reseñas
-     * @param estrellas_totales
-     * @param biografia
      */
-    public Geek(String nombre, String correo, int imagen_perfil, String contrasena, String username, ArrayList <ListaUsuarios> mis_reseñas, int estrellas_totales, String biografia){
-        super( nombre, correo, imagen_perfil, contrasena, username );
-        this.mis_reseñas = mis_reseñas;
-        this.estrellas_totales = estrellas_totales;
-        this.biografia = biografia;
+    public Geek(String nombre, String correo, int imagen_perfil, String contrasena, String username){
+        super( nombre, correo, imagen_perfil, contrasena, username, 1);
+        
     }
-
     
     /**
      * Metodo que regresa las reseñas del Geek
