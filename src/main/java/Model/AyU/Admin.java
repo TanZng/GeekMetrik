@@ -30,15 +30,15 @@ public class Admin extends Usuario {
      * @param imagen_perfil
      * @param contrasena
      * @param username
-     * @param alias
+     * @param alias = username
      * @param valorEnum 
      */
-    public Admin( String nombre, String correo, int imagen_perfil, String contrasena, String username, String alias, String valorEnum ) {
+    public Admin( String nombre, String correo, int imagen_perfil, String contrasena, String username, String valorEnum ) {
         
         // Constructor de la super clase
         super( nombre, correo, imagen_perfil, contrasena, username, 0 );
         
-        this.alias = alias;
+        this.alias = username;
         this.valor = rol.valueOf(valorEnum);
         
     }
