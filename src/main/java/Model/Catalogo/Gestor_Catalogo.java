@@ -33,7 +33,7 @@ public class Gestor_Catalogo {
         this.catalogo = catalogo;
     }
 
-    public List listar_Videojuegos(){
+    public List<Videojuego> listar_Videojuegos(){
         List<Videojuego> datos = new ArrayList<>();
         try {
             con = conectar.getConexion();
@@ -83,4 +83,27 @@ public class Gestor_Catalogo {
 
     }
 
+    public int actualizar(Videojuego vid) {
+        int r=0;
+        String sql="update Videojuego set Titulo=?, Descripción=?, Genero=? where ID_Videojuego=?";
+        try {
+            con = conectar.getConexion();
+            ps = con.prepareStatement(sql);
+            ps.setString(1,vid.getTitulo());
+            ps.setString(2,vid.getDescripcion());
+            ps.setString(3,vid.getGenero());
+            ps.setInt(4,vid.getId_videojuego());
+            r = ps.executeUpdate();
+            if(r==1){
+                return 1;
+            }
+            else{
+                return 0;
+            }
+
+        }catch (Exception e) {
+        }
+        return r;
+
+    }
 }

@@ -41,16 +41,16 @@ public class GUI_Gestionar_Videojuegos extends javax.swing.JFrame {
         jLabelMETRIK = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabelPassword2 = new javax.swing.JLabel();
-        jTextFieldUsr = new javax.swing.JTextField();
+        jTextFieldID = new javax.swing.JTextField();
         jLabelPassword1 = new javax.swing.JLabel();
-        jTextFieldNombre = new javax.swing.JTextField();
+        jTextFieldTitulo = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextAreaBio = new javax.swing.JTextArea();
+        jTextAreaDesc = new javax.swing.JTextArea();
         jLabelPassword31 = new javax.swing.JLabel();
         jLabelPassword32 = new javax.swing.JLabel();
-        jTextFieldEstrellas = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jLabelPassword33 = new javax.swing.JLabel();
+        jTextFieldAdmin = new javax.swing.JTextField();
+        jComboBoxGen = new javax.swing.JComboBox<>();
+        jLabelGenero = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable = new javax.swing.JTable();
@@ -98,15 +98,15 @@ public class GUI_Gestionar_Videojuegos extends javax.swing.JFrame {
         jLabelPassword2.setText("ID");
         jLabelPassword2.setToolTipText("ff");
 
-        jTextFieldUsr.setEditable(false);
-        jTextFieldUsr.setBackground(new java.awt.Color(91, 91, 91));
-        jTextFieldUsr.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jTextFieldUsr.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldUsr.setToolTipText("");
-        jTextFieldUsr.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
-        jTextFieldUsr.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldID.setEditable(false);
+        jTextFieldID.setBackground(new java.awt.Color(91, 91, 91));
+        jTextFieldID.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jTextFieldID.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldID.setToolTipText("");
+        jTextFieldID.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
+        jTextFieldID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldUsrActionPerformed(evt);
+                jTextFieldIDActionPerformed(evt);
             }
         });
 
@@ -116,24 +116,23 @@ public class GUI_Gestionar_Videojuegos extends javax.swing.JFrame {
         jLabelPassword1.setText("Titulo");
         jLabelPassword1.setToolTipText("ff");
 
-        jTextFieldNombre.setBackground(new java.awt.Color(91, 91, 91));
-        jTextFieldNombre.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jTextFieldNombre.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldNombre.setToolTipText("");
-        jTextFieldNombre.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
-        jTextFieldNombre.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldTitulo.setBackground(new java.awt.Color(91, 91, 91));
+        jTextFieldTitulo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jTextFieldTitulo.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldTitulo.setToolTipText("");
+        jTextFieldTitulo.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
+        jTextFieldTitulo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldNombreActionPerformed(evt);
+                jTextFieldTituloActionPerformed(evt);
             }
         });
 
-        jTextAreaBio.setEditable(false);
-        jTextAreaBio.setBackground(new java.awt.Color(91, 91, 91));
-        jTextAreaBio.setColumns(20);
-        jTextAreaBio.setForeground(new java.awt.Color(255, 255, 255));
-        jTextAreaBio.setRows(3);
-        jTextAreaBio.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
-        jScrollPane1.setViewportView(jTextAreaBio);
+        jTextAreaDesc.setBackground(new java.awt.Color(91, 91, 91));
+        jTextAreaDesc.setColumns(20);
+        jTextAreaDesc.setForeground(new java.awt.Color(255, 255, 255));
+        jTextAreaDesc.setRows(3);
+        jTextAreaDesc.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
+        jScrollPane1.setViewportView(jTextAreaDesc);
 
         jLabelPassword31.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabelPassword31.setForeground(new java.awt.Color(255, 255, 255));
@@ -147,27 +146,27 @@ public class GUI_Gestionar_Videojuegos extends javax.swing.JFrame {
         jLabelPassword32.setText("Admin");
         jLabelPassword32.setToolTipText("ff");
 
-        jTextFieldEstrellas.setEditable(false);
-        jTextFieldEstrellas.setBackground(new java.awt.Color(91, 91, 91));
-        jTextFieldEstrellas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jTextFieldEstrellas.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldEstrellas.setToolTipText("");
-        jTextFieldEstrellas.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
-        jTextFieldEstrellas.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldAdmin.setEditable(false);
+        jTextFieldAdmin.setBackground(new java.awt.Color(91, 91, 91));
+        jTextFieldAdmin.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jTextFieldAdmin.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldAdmin.setToolTipText("");
+        jTextFieldAdmin.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
+        jTextFieldAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldEstrellasActionPerformed(evt);
+                jTextFieldAdminActionPerformed(evt);
             }
         });
 
-        jComboBox1.setBackground(new java.awt.Color(91, 91, 91));
-        jComboBox1.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "MOBA", "Acción", "RPG", "Terror" }));
+        jComboBoxGen.setBackground(new java.awt.Color(91, 91, 91));
+        jComboBoxGen.setForeground(new java.awt.Color(255, 255, 255));
+        jComboBoxGen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "MOBA", "Acción", "RPG", "Terror" }));
 
-        jLabelPassword33.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabelPassword33.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelPassword33.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabelPassword33.setText("Categoria");
-        jLabelPassword33.setToolTipText("ff");
+        jLabelGenero.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabelGenero.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelGenero.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabelGenero.setText("Genero");
+        jLabelGenero.setToolTipText("ff");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -179,26 +178,26 @@ public class GUI_Gestionar_Videojuegos extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabelPassword1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextFieldNombre))
+                        .addComponent(jTextFieldTitulo))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabelPassword2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextFieldUsr, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jTextFieldID, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabelPassword31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(18, 18, 18))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabelPassword33, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                                .addComponent(jLabelGenero, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
                                 .addGap(7, 7, 7)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jComboBoxGen, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabelPassword32, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextFieldEstrellas, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jTextFieldAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
@@ -207,12 +206,12 @@ public class GUI_Gestionar_Videojuegos extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldUsr, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldID, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelPassword2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelPassword1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelPassword31, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -220,9 +219,9 @@ public class GUI_Gestionar_Videojuegos extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelPassword32, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldEstrellas, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelPassword33, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBoxGen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelGenero, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
@@ -239,9 +238,7 @@ public class GUI_Gestionar_Videojuegos extends javax.swing.JFrame {
                 "ID", "Titulo", "Descripcion", "Genero", "Estrellas", "Admin"
             }
         ));
-        jTable.setGridColor(new java.awt.Color(255, 255, 255));
         jTable.setSelectionBackground(new java.awt.Color(104, 164, 255));
-        jTable.setSelectionForeground(new java.awt.Color(255, 255, 255));
         jScrollPane2.setViewportView(jTable);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -385,17 +382,17 @@ public class GUI_Gestionar_Videojuegos extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jButtonRegresarActionPerformed
 
-    private void jTextFieldUsrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldUsrActionPerformed
+    private void jTextFieldIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIDActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldUsrActionPerformed
+    }//GEN-LAST:event_jTextFieldIDActionPerformed
 
-    private void jTextFieldNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNombreActionPerformed
+    private void jTextFieldTituloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldTituloActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldNombreActionPerformed
+    }//GEN-LAST:event_jTextFieldTituloActionPerformed
 
-    private void jTextFieldEstrellasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEstrellasActionPerformed
+    private void jTextFieldAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAdminActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldEstrellasActionPerformed
+    }//GEN-LAST:event_jTextFieldAdminActionPerformed
 
     private void jButtonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregarActionPerformed
         // TODO add your handling code here:
@@ -459,23 +456,23 @@ public class GUI_Gestionar_Videojuegos extends javax.swing.JFrame {
     public javax.swing.JButton jButtonGuardar;
     public javax.swing.JButton jButtonListar;
     public javax.swing.JButton jButtonRegresar;
-    public javax.swing.JComboBox<String> jComboBox1;
+    public javax.swing.JComboBox<String> jComboBoxGen;
     private javax.swing.JLabel jLabelGEEK;
+    private javax.swing.JLabel jLabelGenero;
     private javax.swing.JLabel jLabelMETRIK;
     private javax.swing.JLabel jLabelMETRIK2;
     private javax.swing.JLabel jLabelPassword1;
     private javax.swing.JLabel jLabelPassword2;
     private javax.swing.JLabel jLabelPassword31;
     private javax.swing.JLabel jLabelPassword32;
-    private javax.swing.JLabel jLabelPassword33;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     public javax.swing.JTable jTable;
-    public javax.swing.JTextArea jTextAreaBio;
-    public javax.swing.JTextField jTextFieldEstrellas;
-    public javax.swing.JTextField jTextFieldNombre;
-    public javax.swing.JTextField jTextFieldUsr;
+    public javax.swing.JTextArea jTextAreaDesc;
+    public javax.swing.JTextField jTextFieldAdmin;
+    public javax.swing.JTextField jTextFieldID;
+    public javax.swing.JTextField jTextFieldTitulo;
     // End of variables declaration//GEN-END:variables
 }
