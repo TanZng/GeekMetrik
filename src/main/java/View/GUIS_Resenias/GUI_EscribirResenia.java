@@ -5,6 +5,8 @@
  */
 package View.GUIS_Resenias;
 
+import Controller.OCatalogo.OMostrarVideojuego;
+import Model.Catalogo.Videojuego;
 import View.GUIS_AyU.GUI_MiPerfil;
 import View.GUIS_Catalogo.GUI_Mostrar_Videojuego;
 import java.awt.Image;
@@ -15,6 +17,7 @@ import javax.swing.ImageIcon;
  * @author thann
  */
 public class GUI_EscribirResenia extends javax.swing.JFrame {
+
 
     /**
      * Creates new form GUI_EscribirResenia
@@ -210,6 +213,7 @@ public class GUI_EscribirResenia extends javax.swing.JFrame {
     private void jButtonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegresarActionPerformed
         // TODO add your handling code here:
         GUI_Mostrar_Videojuego gui = new GUI_Mostrar_Videojuego();
+        OMostrarVideojuego con = new OMostrarVideojuego(gui.v, gui);
         gui.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButtonRegresarActionPerformed

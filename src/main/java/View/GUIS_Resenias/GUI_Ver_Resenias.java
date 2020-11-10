@@ -5,6 +5,7 @@
  */
 package View.GUIS_Resenias;
 
+import Controller.OCatalogo.OMostrarVideojuego;
 import View.GUIS_Catalogo.GUI_Mostrar_Videojuego;
 
 /**
@@ -473,6 +474,7 @@ public class GUI_Ver_Resenias extends javax.swing.JFrame {
     private void jButtonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegresarActionPerformed
         // TODO add your handling code here:
         GUI_Mostrar_Videojuego gui = new GUI_Mostrar_Videojuego();
+        OMostrarVideojuego con = new OMostrarVideojuego(gui.v, gui);
         gui.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButtonRegresarActionPerformed

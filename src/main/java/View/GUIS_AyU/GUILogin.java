@@ -5,6 +5,7 @@
  */
 package View.GUIS_AyU;
 
+import Controller.OCatalogo.OCatalogo;
 import Model.AyU.Usuario;
 import View.GUIS_Catalogo.GUI_Catalogo;
 import java.awt.Image;
@@ -193,6 +194,7 @@ public class GUILogin extends javax.swing.JFrame {
     private void jButtonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegresarActionPerformed
         // TODO add your handling code here:
         GUI_Catalogo gui = new GUI_Catalogo();
+        OCatalogo ocat = new OCatalogo(gui);
         gui.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButtonRegresarActionPerformed

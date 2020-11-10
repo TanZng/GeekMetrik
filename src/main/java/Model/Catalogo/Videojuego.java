@@ -29,7 +29,7 @@ public class Videojuego extends Elemento {
         this.id_reseñas_asociadas = id_reseñas_asociadas;
     }
 
-    public enum Generos { MOBA, Terror, RPG, Accion }
+    public enum Generos { MOBA, Terror, RPG, Acción }
     private Generos genero;
     private int id_videojuego;
     private ArrayList<Integer> id_reseñas_asociadas;
