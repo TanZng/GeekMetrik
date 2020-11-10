@@ -47,8 +47,6 @@ public class Gestor_Catalogo {
                 String gen = (rs.getString(5)); // Categoria / genero
                 Double star = (rs.getDouble(3)); // estrellas
 
-
-
                 // se salta la imagen
                 String admin = ((rs.getString(6))); //Obtiene ID ADMIN
                 Videojuego v = new Videojuego(titulo, desc, 0, admin, star, gen, id, null);

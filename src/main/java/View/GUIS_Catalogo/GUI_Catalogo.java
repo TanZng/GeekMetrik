@@ -6,6 +6,10 @@
 package View.GUIS_Catalogo;
 
 import Controller.AyU.OAyU;
+import Controller.OCatalogo.OCatalogo;
+import Controller.OCatalogo.OGestionarVideojuegos;
+import Model.AyU.Usuario;
+import Model.Catalogo.Videojuego;
 import View.GUIS_AyU.GUILogin;
 import View.GUIS_AyU.GUISignUp;
 import View.GUIS_AyU.GUI_MiPerfil;
@@ -19,6 +23,11 @@ import javax.swing.JOptionPane;
  * @author thann
  */
 public class GUI_Catalogo extends javax.swing.JFrame {
+
+    public static int cuenta;
+    public static Videojuego v1;
+    public static Videojuego v2;
+    public static Videojuego v3;
 
     /**
      * Creates new form GUI_Catalogo
@@ -53,13 +62,14 @@ public class GUI_Catalogo extends javax.swing.JFrame {
 
         else {
 
-            JOptionPane.showMessageDialog(null, "Hola publico en general!");
+            //JOptionPane.showMessageDialog(null, "Hola publico en general!");
             this.jButtonMiPerfil.setEnabled(false);
             this.jButtonReclamarCode.setEnabled(false);
             this.jButtonLogout.setEnabled(false);
 
             this.jButtonLogin.setVisible(true);
             this.jButtonSignUp.setVisible(true);
+
 
         }
     }
@@ -775,11 +785,11 @@ public class GUI_Catalogo extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
+        /* Set the Nimbus look and feel
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
-         */
+
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -798,12 +808,16 @@ public class GUI_Catalogo extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        /* Create and display the form */
+        //Create and display the form
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new GUI_Catalogo().setVisible(true);
             }
         });
+        */
+        GUI_Catalogo gui = new GUI_Catalogo();
+        OCatalogo ocat = new OCatalogo(gui);
+        gui.setVisible(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
