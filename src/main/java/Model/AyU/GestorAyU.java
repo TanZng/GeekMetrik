@@ -2,6 +2,7 @@ package Model.AyU;
 
 import Model.Utilerias.Conexion;
 import Model.Utilerias.hash;
+import View.GUIS_AyU.GUILogin;
 import java.sql.Connection;
 import java.io.FileInputStream;
 import java.sql.PreparedStatement;
@@ -36,31 +37,18 @@ public class GestorAyU {
     public void setUsuarios( ListaUsuarios usuarios ) {
         this.usuarios = usuarios;
     }
-
-    /**
-     * Función que registra un Geek en la base de datos de Geek Metrik
-     * @param nombre
-     * @param correo
-     * @param archivoImagen
-     * @param imagen
-     * @param contraseña
-     * @param username
-     * @return True si se registró el Geek o False en caso contrario
-     */
-    public boolean efectuarRegistroGeek( Geek geek, FileInputStream imagen ) {
-        
-        // Encriptamos contrasena
-        String contra = hash.hash1( geek.getContrasena() );
-        
+    
+    public boolean modificarUsuario( Usuario geek, String bio ) {
+       
         // Conectamos con la base de datos
         Conexion SQL = new Conexion();
         Connection con = SQL.getConexion();
         
         // Declaramos la instruccion de SQL
-        String sql = "INSERT INTO Usuario(Nombre, Correo, ImagenPerfil, Contra, Username, TipoUsuario) VALUES(?, ?, ?, ?, ?, ?)";
+        String sql = "UPDATE Usuario SET Nombre=?, ApellidoP=?, ApellidoM=?, Correo=? WHERE Username=?";
         
         // Declaramos instruccion para tabla Geek
-        String sqlGeek = "INSERT INTO Geek(Username) VALUES ( ? )";
+        String sqlGeek = "UPDATE Geek SET Biografia=? WHERE Username=?";
         
         PreparedStatement ps;
         
@@ -71,19 +59,19 @@ public class GestorAyU {
             
             // Asignamos valores
             ps.setString(1, geek.getNombre());
-            ps.setString(2, geek.getCorreo());
-            ps.setBinaryStream(3, imagen, geek.getImagen_perfil());
-            ps.setString(4, contra);
+            ps.setString(2, geek.getaPaterno());
+            ps.setString(3, geek.getaMaterno());
+            ps.setString(4, geek.getCorreo());
             ps.setString(5, geek.getUsername());
-            ps.setInt(6, geek.getTipo());
-            
+
             // Ejecutamos la instrucción ya con sus valores
             ps.execute();
             
             // Preparamos la instrucción para tabla geek
             ps = con.prepareStatement(sqlGeek);
             
-            ps.setString(1, geek.getUsername());
+            ps.setString(1, bio);
+            ps.setString(2, geek.getUsername());
             
             // Ejecutamos la instrucción ya con sus valores
             ps.execute();

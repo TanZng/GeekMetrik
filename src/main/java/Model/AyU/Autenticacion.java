@@ -6,6 +6,7 @@
 package Model.AyU;
 
 import Model.Utilerias.Conexion;
+import View.GUIS_AyU.GUILogin;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -84,10 +85,12 @@ public class Autenticacion {
         
         // Declaramos instruccion para tabla Geek
         String sql = "SELECT * FROM Usuario WHERE Username = ?";
+        String sqlBio = "SELECT Biografia FROM Geek WHERE Username = ?";
         
         PreparedStatement ps;
         ResultSet rs;
         Usuario usr = null;
+        String bio = "";
         
         try {
             
@@ -101,17 +104,33 @@ public class Autenticacion {
                 if( this.contrasena.equals(rs.getString(6))) {
                     
                     String nombre = (rs.getString(1)); 
+                    String aPaterno = (rs.getString(2));
+                    String aMaterno = (rs.getString(3));
                     String correo = (rs.getString(4));
                     String contra = (rs.getString(6));
                     String user = (rs.getString(7)); 
                     int tipo = (rs.getInt(8));
 
                     usr = new Usuario( nombre, correo, 0, contra, user, tipo );
+                    usr.setaPaterno(aPaterno);
+                    usr.setaMaterno(aMaterno);
                     
                     System.out.println("Bien!");
                     this.autenticado = usr;
                     
                 }
+                
+            }
+            
+            con = SQL.getConexion();
+            ps = con.prepareStatement(sqlBio);
+            ps.setString(1, this.username);
+            rs = ps.executeQuery();
+            
+            if ( rs.next() ) {
+                
+                bio = (rs.getString(1));
+                GUILogin.bio = bio;
                 
             }
             

@@ -28,6 +28,7 @@ public class OAyU implements ActionListener {
     private Geek geek;
     private GUISignUp gui;
     private GUILogin gui1;
+    private GUI_MiPerfil gui2;
     private GestorAyU gestor;
     private Autenticacion autenticar;
     private Registro registrar;
@@ -56,6 +57,16 @@ public class OAyU implements ActionListener {
             }
             
         }
+        
+        else if( this.gestor != null ) {
+            
+            if( actionEvent.getSource() == gui2.jButtonActualizar ) {
+                
+                actualizar();
+                
+            }
+  
+        }
 
     }
     
@@ -76,6 +87,22 @@ public class OAyU implements ActionListener {
         
         this.gui1.jButtonLogin.addActionListener(this);
         this.gui1.jButtonRegresar.addActionListener(this);
+        
+    }
+    
+    public OAyU( GUI_MiPerfil gui ) {
+        
+        this.gui2 = gui;
+        this.gestor = new GestorAyU();
+        
+        this.gui2.jTextFieldNombre.setText(GUILogin.autenticado.getNombre());
+        this.gui2.jTextFieldApellP.setText(GUILogin.autenticado.getaPaterno());
+        this.gui2.jTextFieldApellM.setText(GUILogin.autenticado.getaMaterno());
+        this.gui2.jTextFieldMail.setText(GUILogin.autenticado.getCorreo());
+        this.gui2.jTextAreaBio.setText(GUILogin.bio);
+        this.gui2.jLabelMETRIK1.setText("@" + GUILogin.autenticado.getUsername());
+        
+        this.gui2.jButtonActualizar.addActionListener(this);
         
     }
     
@@ -160,6 +187,29 @@ public class OAyU implements ActionListener {
         else {
             
             JOptionPane.showMessageDialog(null, "No se pudo autenticar :(");
+            
+        }
+        
+    }
+    
+    public void actualizar() {
+        
+        GUILogin.autenticado.setNombre(this.gui2.jTextFieldNombre.getText());
+        GUILogin.autenticado.setaMaterno(this.gui2.jTextFieldApellP.getText());
+        GUILogin.autenticado.setaPaterno(this.gui2.jTextFieldApellM.getText());
+        GUILogin.autenticado.setCorreo(this.gui2.jTextFieldMail.getText());
+        String bio = this.gui2.jTextAreaBio.getText();
+        
+        // Extraemos usuarios de la DB y esperamos autenticación
+        if( gestor.modificarUsuario(GUILogin.autenticado, bio)) {
+            
+            JOptionPane.showMessageDialog(null, "Actualizado!");
+            
+        }
+        
+        else {
+            
+            JOptionPane.showMessageDialog(null, "Fallo al actualizar :(");
             
         }
         

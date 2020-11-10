@@ -17,6 +17,7 @@ import javax.swing.ImageIcon;
 public class GUILogin extends javax.swing.JFrame {
 
     public static Usuario autenticado;
+    public static String bio;
     
     /**
      * Creates new form GUIL

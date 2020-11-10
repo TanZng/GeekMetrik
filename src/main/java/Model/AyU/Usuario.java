@@ -9,6 +9,8 @@ public class Usuario {
     
     // Atributos
     private String nombre;
+    private String aMaterno;
+    private String aPaterno;
     private String correo;
     private int imagen_perfil;
     private String contrasena;
@@ -57,8 +59,24 @@ public class Usuario {
      * Metodo que guarda el nombre del usuario
      * @param nombre 
      */
-    public void setNomnre( String nombre ) {    
+    public void setNombre( String nombre ) {    
         this.nombre = nombre;   
+    }
+
+    public String getaMaterno() {
+        return aMaterno;
+    }
+
+    public void setaMaterno(String aMaterno) {
+        this.aMaterno = aMaterno;
+    }
+
+    public String getaPaterno() {
+        return aPaterno;
+    }
+
+    public void setaPaterno(String aPaterno) {
+        this.aPaterno = aPaterno;
     }
 
     /**

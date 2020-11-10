@@ -33,7 +33,7 @@ public class GUI_Catalogo extends javax.swing.JFrame {
 
             if( GUILogin.autenticado.getTipo() == 1 ) {
 
-                JOptionPane.showMessageDialog(null, "Hola usuario!");
+                
                 this.jButtonMiPerfil.setEnabled(true);
                 this.jButtonReclamarCode.setEnabled(true);
                 this.jButtonLogout.setEnabled(true);
@@ -43,17 +43,10 @@ public class GUI_Catalogo extends javax.swing.JFrame {
 
             }
 
-            else {
-
-                JOptionPane.showMessageDialog(null, "Hola admin!");
-
-            }
-
         }
 
         else {
-
-            JOptionPane.showMessageDialog(null, "Hola publico en general!");
+            
             this.jButtonMiPerfil.setEnabled(false);
             this.jButtonReclamarCode.setEnabled(false);
             this.jButtonLogout.setEnabled(false);
@@ -742,6 +735,7 @@ public class GUI_Catalogo extends javax.swing.JFrame {
     private void jButtonMiPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMiPerfilActionPerformed
         // TODO add your handling code here:
         GUI_MiPerfil gui = new GUI_MiPerfil();
+        OAyU oyente = new OAyU( gui );
         gui.setVisible(true);
         this.setVisible(false);
 
