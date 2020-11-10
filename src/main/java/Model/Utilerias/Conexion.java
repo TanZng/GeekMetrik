@@ -15,7 +15,7 @@ import java.sql.*;
  */
 public class Conexion {
     // si tienen problema usen en MySQL Command Line => SET GLOBAL time_zone = '-3:00'; 
-    String url = "jdbc:mysql://localhost:3306/GeekMetrik";// GeekMetrik DB
+    String url = "jdbc:mysql://localhost:3306/GeekMetrik"; // GeekMetrik DB
     String user = "root";
     String password = ""; //aqui va la contrasenia de mysql
     

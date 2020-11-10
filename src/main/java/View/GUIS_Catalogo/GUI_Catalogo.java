@@ -6,6 +6,11 @@
 package View.GUIS_Catalogo;
 
 import Controller.AyU.OAyU;
+import Controller.OCatalogo.OCatalogo;
+import Controller.OCatalogo.OGestionarVideojuegos;
+import Controller.OCatalogo.OMostrarVideojuego;
+import Model.AyU.Usuario;
+import Model.Catalogo.Videojuego;
 import View.GUIS_AyU.GUILogin;
 import View.GUIS_AyU.GUISignUp;
 import View.GUIS_AyU.GUI_MiPerfil;
@@ -20,6 +25,12 @@ import javax.swing.JOptionPane;
  */
 public class GUI_Catalogo extends javax.swing.JFrame {
 
+    public static int cuenta;
+    public static Videojuego v1;
+    public static Videojuego v2;
+    public static Videojuego v3;
+    public static String genero = "Todos";
+
     /**
      * Creates new form GUI_Catalogo
      */
@@ -33,7 +44,7 @@ public class GUI_Catalogo extends javax.swing.JFrame {
 
             if( GUILogin.autenticado.getTipo() == 1 ) {
 
-                
+                JOptionPane.showMessageDialog(null, "Hola usuario!");
                 this.jButtonMiPerfil.setEnabled(true);
                 this.jButtonReclamarCode.setEnabled(true);
                 this.jButtonLogout.setEnabled(true);
@@ -43,16 +54,24 @@ public class GUI_Catalogo extends javax.swing.JFrame {
 
             }
 
+            else {
+
+                JOptionPane.showMessageDialog(null, "Hola admin!");
+
+            }
+
         }
 
         else {
-            
+
+            //JOptionPane.showMessageDialog(null, "Hola publico en general!");
             this.jButtonMiPerfil.setEnabled(false);
             this.jButtonReclamarCode.setEnabled(false);
             this.jButtonLogout.setEnabled(false);
 
             this.jButtonLogin.setVisible(true);
             this.jButtonSignUp.setVisible(true);
+
 
         }
     }
@@ -93,24 +112,22 @@ public class GUI_Catalogo extends javax.swing.JFrame {
         jTextFieldTituloVideojuego2 = new javax.swing.JTextField();
         jTextFieldEstr2 = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
-        jButtonVerVid3 = new javax.swing.JButton();
+        jButtonVerVideojuego3 = new javax.swing.JButton();
         labelImagen3 = new javax.swing.JLabel();
         jLabelEstrellas3 = new javax.swing.JLabel();
         jTextFieldTituloVideojuego3 = new javax.swing.JTextField();
         jTextFieldEstr3 = new javax.swing.JTextField();
         jButtonAfter = new javax.swing.JButton();
         jButtonNext = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
+        jPanelGeek = new javax.swing.JPanel();
         jButtonMiPerfil = new javax.swing.JButton();
         jButtonReclamarCode = new javax.swing.JButton();
         jLabelMETRIK3 = new javax.swing.JLabel();
         jButtonLogout = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
-        jButtonMoba = new javax.swing.JButton();
-        jButtonAccion = new javax.swing.JButton();
         jLabelMETRIK4 = new javax.swing.JLabel();
-        jButtonTerror = new javax.swing.JButton();
-        jButtonRPG = new javax.swing.JButton();
+        jButtonActualizar = new javax.swing.JButton();
+        jComboBoxGen = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -156,6 +173,8 @@ public class GUI_Catalogo extends javax.swing.JFrame {
             }
         });
 
+        labelImagen1.setForeground(new java.awt.Color(255, 255, 255));
+        labelImagen1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelImagen1.setText("Imagen");
 
         jLabelEstrellas1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -254,6 +273,8 @@ public class GUI_Catalogo extends javax.swing.JFrame {
             }
         });
 
+        labelImagen2.setForeground(new java.awt.Color(255, 255, 255));
+        labelImagen2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelImagen2.setText("Imagen");
 
         jLabelEstrellas2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -332,17 +353,19 @@ public class GUI_Catalogo extends javax.swing.JFrame {
 
         jPanel6.setBackground(new java.awt.Color(91, 91, 91));
 
-        jButtonVerVid3.setBackground(new java.awt.Color(186, 126, 255));
-        jButtonVerVid3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButtonVerVid3.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonVerVid3.setText("Ver Videojuego");
-        jButtonVerVid3.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
-        jButtonVerVid3.addActionListener(new java.awt.event.ActionListener() {
+        jButtonVerVideojuego3.setBackground(new java.awt.Color(186, 126, 255));
+        jButtonVerVideojuego3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jButtonVerVideojuego3.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonVerVideojuego3.setText("Ver Videojuego");
+        jButtonVerVideojuego3.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
+        jButtonVerVideojuego3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonVerVid3ActionPerformed(evt);
+                jButtonVerVideojuego3ActionPerformed(evt);
             }
         });
 
+        labelImagen3.setForeground(new java.awt.Color(255, 255, 255));
+        labelImagen3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelImagen3.setText("Imagen");
 
         jLabelEstrellas3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -387,7 +410,7 @@ public class GUI_Catalogo extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(57, 57, 57)
-                        .addComponent(jButtonVerVid3)
+                        .addComponent(jButtonVerVideojuego3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 121, Short.MAX_VALUE))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -412,7 +435,7 @@ public class GUI_Catalogo extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createSequentialGroup()
                         .addComponent(jTextFieldTituloVideojuego3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonVerVid3)
+                        .addComponent(jButtonVerVideojuego3)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -439,7 +462,7 @@ public class GUI_Catalogo extends javax.swing.JFrame {
             }
         });
 
-        jPanel2.setBackground(new java.awt.Color(91, 91, 91));
+        jPanelGeek.setBackground(new java.awt.Color(91, 91, 91));
 
         jButtonMiPerfil.setBackground(new java.awt.Color(104, 164, 255));
         jButtonMiPerfil.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -480,22 +503,22 @@ public class GUI_Catalogo extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanelGeekLayout = new javax.swing.GroupLayout(jPanelGeek);
+        jPanelGeek.setLayout(jPanelGeekLayout);
+        jPanelGeekLayout.setHorizontalGroup(
+            jPanelGeekLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelGeekLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelGeekLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelMETRIK3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButtonMiPerfil, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButtonReclamarCode, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
                     .addComponent(jButtonLogout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        jPanelGeekLayout.setVerticalGroup(
+            jPanelGeekLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelGeekLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabelMETRIK3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -509,55 +532,27 @@ public class GUI_Catalogo extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(91, 91, 91));
 
-        jButtonMoba.setBackground(new java.awt.Color(186, 126, 255));
-        jButtonMoba.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButtonMoba.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonMoba.setText("MOBA");
-        jButtonMoba.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
-        jButtonMoba.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonMobaActionPerformed(evt);
-            }
-        });
-
-        jButtonAccion.setBackground(new java.awt.Color(186, 126, 255));
-        jButtonAccion.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButtonAccion.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonAccion.setText("Acción");
-        jButtonAccion.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
-        jButtonAccion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAccionActionPerformed(evt);
-            }
-        });
-
         jLabelMETRIK4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabelMETRIK4.setForeground(new java.awt.Color(255, 255, 255));
         jLabelMETRIK4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelMETRIK4.setText("Generos");
         jLabelMETRIK4.setToolTipText("");
 
-        jButtonTerror.setBackground(new java.awt.Color(186, 126, 255));
-        jButtonTerror.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButtonTerror.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonTerror.setText("Terror");
-        jButtonTerror.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
-        jButtonTerror.addActionListener(new java.awt.event.ActionListener() {
+        jButtonActualizar.setBackground(new java.awt.Color(186, 126, 255));
+        jButtonActualizar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jButtonActualizar.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonActualizar.setText("Actualizar");
+        jButtonActualizar.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
+        jButtonActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonTerrorActionPerformed(evt);
+                jButtonActualizarActionPerformed(evt);
             }
         });
 
-        jButtonRPG.setBackground(new java.awt.Color(186, 126, 255));
-        jButtonRPG.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButtonRPG.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonRPG.setText("RPG");
-        jButtonRPG.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
-        jButtonRPG.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonRPGActionPerformed(evt);
-            }
-        });
+        jComboBoxGen.setBackground(new java.awt.Color(91, 91, 91));
+        jComboBoxGen.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jComboBoxGen.setForeground(new java.awt.Color(255, 255, 255));
+        jComboBoxGen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Todos", "MOBA", "Acción", "RPG", "Terror" }));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -567,10 +562,8 @@ public class GUI_Catalogo extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelMETRIK4, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
-                    .addComponent(jButtonMoba, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButtonAccion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButtonTerror, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButtonRPG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButtonActualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jComboBoxGen, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -578,14 +571,10 @@ public class GUI_Catalogo extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabelMETRIK4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButtonMoba)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButtonAccion)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButtonTerror)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButtonRPG)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jComboBoxGen, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButtonActualizar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -610,7 +599,7 @@ public class GUI_Catalogo extends javax.swing.JFrame {
                                 .addComponent(jButtonNext, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanelGeek, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(19, 19, 19)
@@ -640,21 +629,21 @@ public class GUI_Catalogo extends javax.swing.JFrame {
                         .addComponent(jButtonSignUp))
                     .addComponent(labelLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButtonNext, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonAfter, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanelGeek, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButtonNext, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonAfter, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
@@ -671,9 +660,12 @@ public class GUI_Catalogo extends javax.swing.JFrame {
 
     private void jButtonVerVideojuego1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerVideojuego1ActionPerformed
         // TODO add your handling code here:
-        GUI_Mostrar_Videojuego gui = new GUI_Mostrar_Videojuego();
-        gui.setVisible(true);
-        this.setVisible(false);
+        if(v1 != null) {
+            GUI_Mostrar_Videojuego gui = new GUI_Mostrar_Videojuego();
+            OMostrarVideojuego cat = new OMostrarVideojuego(v1, gui);
+            gui.setVisible(true);
+            this.setVisible(false);
+        }
     }//GEN-LAST:event_jButtonVerVideojuego1ActionPerformed
 
     private void jButtonSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSignUpActionPerformed
@@ -694,9 +686,12 @@ public class GUI_Catalogo extends javax.swing.JFrame {
 
     private void jButtonVerVideojuego2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerVideojuego2ActionPerformed
         // TODO add your handling code here:
-        GUI_Mostrar_Videojuego gui = new GUI_Mostrar_Videojuego();
-        gui.setVisible(true);
-        this.setVisible(false);
+        if(v2 != null) {
+            GUI_Mostrar_Videojuego gui = new GUI_Mostrar_Videojuego();
+            OMostrarVideojuego cat = new OMostrarVideojuego(v2, gui);
+            gui.setVisible(true);
+            this.setVisible(false);
+        }
 
     }//GEN-LAST:event_jButtonVerVideojuego2ActionPerformed
 
@@ -708,13 +703,16 @@ public class GUI_Catalogo extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldEstr2ActionPerformed
 
-    private void jButtonVerVid3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerVid3ActionPerformed
+    private void jButtonVerVideojuego3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerVideojuego3ActionPerformed
         // TODO add your handling code here:
-        GUI_Mostrar_Videojuego gui = new GUI_Mostrar_Videojuego();
-        gui.setVisible(true);
-        this.setVisible(false);
+        if(v3 != null){
+            GUI_Mostrar_Videojuego gui = new GUI_Mostrar_Videojuego();
+            OMostrarVideojuego cat = new OMostrarVideojuego(v3, gui);
+            gui.setVisible(true);
+            this.setVisible(false);
+        }
 
-    }//GEN-LAST:event_jButtonVerVid3ActionPerformed
+    }//GEN-LAST:event_jButtonVerVideojuego3ActionPerformed
 
     private void jTextFieldTituloVideojuego3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldTituloVideojuego3ActionPerformed
         // TODO add your handling code here:
@@ -749,31 +747,19 @@ public class GUI_Catalogo extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonLogoutActionPerformed
 
-    private void jButtonMobaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMobaActionPerformed
+    private void jButtonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonActualizarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonMobaActionPerformed
-
-    private void jButtonAccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAccionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonAccionActionPerformed
-
-    private void jButtonTerrorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTerrorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonTerrorActionPerformed
-
-    private void jButtonRPGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRPGActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonRPGActionPerformed
+    }//GEN-LAST:event_jButtonActualizarActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
+        /* Set the Nimbus look and feel
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
-         */
+
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -792,29 +778,31 @@ public class GUI_Catalogo extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        /* Create and display the form */
+        //Create and display the form
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new GUI_Catalogo().setVisible(true);
             }
         });
+        */
+        GUI_Catalogo gui = new GUI_Catalogo();
+        OCatalogo ocat = new OCatalogo(gui);
+        gui.setVisible(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton jButtonAccion;
+    public javax.swing.JButton jButtonActualizar;
     public javax.swing.JButton jButtonAfter;
     public javax.swing.JButton jButtonLogin;
     public javax.swing.JButton jButtonLogout;
     public javax.swing.JButton jButtonMiPerfil;
-    public javax.swing.JButton jButtonMoba;
     public javax.swing.JButton jButtonNext;
-    public javax.swing.JButton jButtonRPG;
     public javax.swing.JButton jButtonReclamarCode;
     public javax.swing.JButton jButtonSignUp;
-    public javax.swing.JButton jButtonTerror;
-    public javax.swing.JButton jButtonVerVid3;
     public javax.swing.JButton jButtonVerVideojuego1;
     public javax.swing.JButton jButtonVerVideojuego2;
+    public javax.swing.JButton jButtonVerVideojuego3;
+    public javax.swing.JComboBox<String> jComboBoxGen;
     private javax.swing.JLabel jLabelEstrellas1;
     private javax.swing.JLabel jLabelEstrellas2;
     private javax.swing.JLabel jLabelEstrellas3;
@@ -824,10 +812,10 @@ public class GUI_Catalogo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelMETRIK3;
     private javax.swing.JLabel jLabelMETRIK4;
     public javax.swing.JPanel jPanel1;
-    public javax.swing.JPanel jPanel2;
     public javax.swing.JPanel jPanel3;
     public javax.swing.JPanel jPanel5;
     public javax.swing.JPanel jPanel6;
+    public javax.swing.JPanel jPanelGeek;
     public javax.swing.JTextField jTextFieldEstr1;
     public javax.swing.JTextField jTextFieldEstr2;
     public javax.swing.JTextField jTextFieldEstr3;
