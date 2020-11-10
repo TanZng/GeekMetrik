@@ -6,6 +6,7 @@
 package View.GUIS_Catalogo;
 
 import Controller.OCatalogo.OCatalogo;
+import Model.Catalogo.Videojuego;
 import View.GUIS_Resenias.GUI_EscribirResenia;
 import View.GUIS_Resenias.GUI_Ver_Resenias;
 
@@ -15,6 +16,8 @@ import View.GUIS_Resenias.GUI_Ver_Resenias;
  */
 public class GUI_Mostrar_Videojuego extends javax.swing.JFrame {
 
+    public static Videojuego v;
+
     /**
      * Creates new form GUI_Mostrar_Videojuego
      */
@@ -23,6 +26,8 @@ public class GUI_Mostrar_Videojuego extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         this.getContentPane().setBackground(new java.awt.Color(72, 72, 72));
+        jTextAreaDesc.setLineWrap(true);
+        jTextAreaDesc.setWrapStyleWord(true);
     }
 
     /**
@@ -77,9 +82,12 @@ public class GUI_Mostrar_Videojuego extends javax.swing.JFrame {
 
         jTextAreaDesc.setEditable(false);
         jTextAreaDesc.setBackground(new java.awt.Color(91, 91, 91));
-        jTextAreaDesc.setColumns(20);
+        jTextAreaDesc.setColumns(5);
+        jTextAreaDesc.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jTextAreaDesc.setForeground(new java.awt.Color(255, 255, 255));
         jTextAreaDesc.setRows(5);
         jTextAreaDesc.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
+        jTextAreaDesc.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jScrollPane1.setViewportView(jTextAreaDesc);
 
         jTextFieldEstrellas.setEditable(false);
