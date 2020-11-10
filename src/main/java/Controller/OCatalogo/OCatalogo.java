@@ -23,33 +23,39 @@ public class OCatalogo implements ActionListener {
     ArrayList<JTextField> jTextFieldTitulos;
     ArrayList<JTextField> jTextFieldEstrellas;
     ArrayList<Videojuego> bloques;
+    ArrayList<JButton> botones_ver;
 
     public OCatalogo(GUI_Catalogo gui) {
         this.gui = gui;
-        lista = dao.listar_Videojuegos();
+
 
         this.gui.jButtonNext.addActionListener(this);
         this.gui.jButtonAfter.addActionListener(this);
 
-        this.gui.jButtonMoba.addActionListener(this);
-        this.gui.jButtonRPG.addActionListener(this);
-        this.gui.jButtonTerror.addActionListener(this);
-        this.gui.jButtonAccion.addActionListener(this);
+
+        this.gui.jButtonActualizar.addActionListener(this);
+        this.gui.jComboBoxGen.addActionListener(this);
+
+        this.gui.jComboBoxGen.setSelectedItem(this.gui.genero);
 
         if(this.gui.v1 == null) {
-            cargar_videojuegos_a_gui();
+            ver_todos_los_videojuegos();
+        }
+        else if(this.gui.genero != "Todos"){
+            lista = dao.videojuegos_genero(this.gui.genero);
+            preparar_labels();
+            mostrar_tres_videojuegos();
         }
         else{
+            lista = dao.listar_Videojuegos();
             preparar_labels();
             mostrar_tres_videojuegos();
         }
         //this.gui.jButtonListar.addActionListener(this);
     }
 
-
-
     public void cargar_videojuegos_a_gui(){
-        //vaciar_tresvideojuegos();
+        vaciar_tresvideojuegos();
         next();
         preparar_labels();
         mostrar_tres_videojuegos();
@@ -80,6 +86,17 @@ public class OCatalogo implements ActionListener {
         bloques.add(gui.v1);
         bloques.add(gui.v2);
         bloques.add(gui.v3);
+
+        botones_ver = new ArrayList(3);
+        botones_ver.add(gui.jButtonVerVideojuego1);
+        botones_ver.add(gui.jButtonVerVideojuego2);
+        botones_ver.add(gui.jButtonVerVideojuego3);
+
+    }
+
+    public void ver_todos_los_videojuegos(){
+        lista = dao.listar_Videojuegos();
+        cargar_videojuegos_a_gui();
     }
 
     @Override
@@ -103,15 +120,25 @@ public class OCatalogo implements ActionListener {
                 cargar_videojuegos_a_gui();
             }
         }
+        if( actionEvent.getSource() == gui.jButtonActualizar){
+            gui.genero = String.valueOf(gui.jComboBoxGen.getSelectedItem());
+            if(gui.genero != "Todos") {
+                lista = dao.videojuegos_genero(gui.genero);
+                gui.cuenta = 0;
+                cargar_videojuegos_a_gui();
+            }
+            else{
+                ver_todos_los_videojuegos();
+            }
+        }
     }
 
-    /*
+
     public void vaciar_tresvideojuegos(){
-        v1 = null;
-        v2 = null;
-        v3 = null;
+        gui.v1 = null;
+        gui.v2 = null;
+        gui.v3 = null;
     }
-    */
 
     public void next(){
 
@@ -130,22 +157,28 @@ public class OCatalogo implements ActionListener {
     }
 
 
-    public void mostrar_un_videojuego( JTextField titulo, JTextField estrellas, Videojuego v){
+    public void mostrar_un_videojuego( JTextField titulo, JTextField estrellas, Videojuego v, JButton boton){
         if( v != null) {
             titulo.setText(v.getTitulo());
             estrellas.setText(String.valueOf(v.getEstrellas()));
+            boton.setEnabled(true);
         }
         else{
             titulo.setText("Nada que mostrar :(");
             estrellas.setText(String.valueOf(404));
+            boton.setEnabled(false);
         }
     }
 
     public void mostrar_tres_videojuegos(){
         for (int i = 0; i < 3; i++) {
-            mostrar_un_videojuego( jTextFieldTitulos.get(i), jTextFieldEstrellas.get(i), bloques.get(i) );
+            mostrar_un_videojuego( jTextFieldTitulos.get(i), jTextFieldEstrellas.get(i), bloques.get(i), botones_ver.get(i) );
 
         }
+    }
+
+    private void videojuegos_genero(String genero) {
+
     }
 
 }

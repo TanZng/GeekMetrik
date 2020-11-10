@@ -117,4 +117,28 @@ public class Gestor_Catalogo {
         return r;
     }
 
+    public List<Videojuego> videojuegos_genero(String genero) {
+        List<Videojuego> datos = new ArrayList<>();
+        String sql = String.format("SELECT * FROM Videojuego WHERE Genero='%s' ", genero);
+        try {
+            con = conectar.getConexion();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+
+                int id = (rs.getInt(1)); //id videojuego
+                String titulo = (rs.getString(2)); // titulo
+                String desc = (rs.getString(4)); // Descrip
+                String gen = (rs.getString(5)); // Categoria / genero
+                Double star = (rs.getDouble(3)); // estrellas
+
+                // se salta la imagen
+                String admin = ((rs.getString(6))); //Obtiene ID ADMIN
+                Videojuego v = new Videojuego(titulo, desc, 0, admin, star, gen, id, null);
+                datos.add(v);
+            }
+        } catch (Exception e) {
+        }
+        return datos;
+    }
 }
