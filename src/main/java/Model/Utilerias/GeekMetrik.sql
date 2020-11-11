@@ -92,7 +92,7 @@ CREATE TABLE IF NOT EXISTS GeekMetrik.RedSocial (
 CREATE TABLE IF NOT EXISTS GeekMetrik.Reseñas (
     ID_Reseña INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     ID_Vid INT NOT NULL,
-    UsernameGeek CHAR(50) NOT NULL,
+    UsernameGeek INT NOT NULL,
     Titulo CHAR(30) NOT NULL,
     Reseña VARCHAR(500) NOT NULL,
     Calificacion NUMERIC(5) NOT NULL,
