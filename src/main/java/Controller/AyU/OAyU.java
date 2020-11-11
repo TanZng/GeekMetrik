@@ -1,5 +1,6 @@
 package Controller.AyU;
 
+import Controller.OCatalogo.OMenuAdmin;
 import Model.AyU.*;
 import Model.Utilerias.hash;
 import View.GUIS_AyU.*;
@@ -169,6 +170,7 @@ public class OAyU implements ActionListener {
                 
                 // Falta generar el oyente
                 GUI_Menu_Admin admin = new GUI_Menu_Admin();
+                OMenuAdmin con = new OMenuAdmin(admin);
                 
                 admin.setVisible(true);
                 this.gui1.setVisible(false);

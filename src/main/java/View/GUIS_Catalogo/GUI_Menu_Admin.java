@@ -5,6 +5,7 @@
  */
 package View.GUIS_Catalogo;
 
+import Controller.OCatalogo.OCatalogo;
 import Controller.OCatalogo.OGestionarVideojuegos;
 import View.GUIS_AyU.GUISignUp;
 import View.GUIS_AyU.GUI_Gestion_Usuarios;

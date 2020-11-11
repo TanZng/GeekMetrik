@@ -28,6 +28,8 @@ public class OCatalogo implements ActionListener {
     public OCatalogo(GUI_Catalogo gui) {
         this.gui = gui;
 
+        this.gui.jButtonLogout.addActionListener(this);
+
 
         this.gui.jButtonNext.addActionListener(this);
         this.gui.jButtonAfter.addActionListener(this);
@@ -130,6 +132,14 @@ public class OCatalogo implements ActionListener {
             else{
                 ver_todos_los_videojuegos();
             }
+        }
+
+        if(actionEvent.getSource() == gui.jButtonLogout){
+            GUILogin.autenticado = null;
+            JOptionPane.showMessageDialog(null, "Cerraste sesión");
+            gui.setVisible(false);
+            gui = new GUI_Catalogo();
+            gui.setVisible(true);
         }
     }
 
