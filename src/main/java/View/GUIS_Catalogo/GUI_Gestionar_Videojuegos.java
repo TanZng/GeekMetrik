@@ -6,6 +6,7 @@
 package View.GUIS_Catalogo;
 
 import Controller.OCatalogo.OGestionarVideojuegos;
+import Controller.OCatalogo.OMenuAdmin;
 import java.io.File;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -378,6 +379,7 @@ public class GUI_Gestionar_Videojuegos extends javax.swing.JFrame {
     private void jButtonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegresarActionPerformed
         // TODO add your handling code here:
         GUI_Menu_Admin gui = new GUI_Menu_Admin();
+        OMenuAdmin con = new OMenuAdmin(gui);
         gui.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButtonRegresarActionPerformed

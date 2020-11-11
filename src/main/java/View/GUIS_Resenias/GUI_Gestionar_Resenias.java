@@ -5,6 +5,7 @@
  */
 package View.GUIS_Resenias;
 
+import Controller.OCatalogo.OMenuAdmin;
 import View.GUIS_Catalogo.GUI_Menu_Admin;
 
 /**
@@ -347,6 +348,7 @@ public class GUI_Gestionar_Resenias extends javax.swing.JFrame {
     private void jButtonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegresarActionPerformed
         // TODO add your handling code here:
         GUI_Menu_Admin gui = new GUI_Menu_Admin();
+        OMenuAdmin con = new OMenuAdmin(gui);
         gui.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButtonRegresarActionPerformed
