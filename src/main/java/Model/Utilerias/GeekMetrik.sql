@@ -99,7 +99,4 @@ CREATE TABLE IF NOT EXISTS GeekMetrik.Reseñas (
     CONSTRAINT ID_Vid FOREIGN KEY (ID_Vid)
         REFERENCES GeekMetrik.Videojuego (ID_Videojuego)
         ON DELETE CASCADE ON UPDATE CASCADE,
-    CONSTRAINT UsernameGeek FOREIGN KEY (UsernameGeek)
-        REFERENCES GeekMetrik.Geek (Username)
-        ON DELETE NO ACTION ON UPDATE CASCADE
 );
