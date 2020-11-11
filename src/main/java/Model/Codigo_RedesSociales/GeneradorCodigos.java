@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Model.Codigo_Reseñas;
+package Model.Codigo_RedesSociales;
 
 import java.util.ArrayList;
-import Model.Codigo_Reseñas.Codigo;
+import Model.Codigo_RedesSociales.Codigo;
 import java.util.Random;
 import java.util.Calendar;
 
@@ -23,7 +23,7 @@ public class GeneradorCodigos {
     //Constructor (Vácio)
     //Se utiliza cuando comience el sistema GeekMetrik sin ningún código
     public GeneradorCodigos(){
-        steam_url = "https://store.steampowered.com/; //Url de steam";
+        steam_url = "https://store.steampowered.com/"; //Url de steam
         ArrayList<Codigo> codigosValidados = new ArrayList<Codigo>(); //Codigos válidos
         status = true; //Online
     }
