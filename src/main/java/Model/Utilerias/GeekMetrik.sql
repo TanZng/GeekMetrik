@@ -20,7 +20,8 @@ CREATE TABLE IF NOT EXISTS GeekMetrik.Usuario (
 CREATE TABLE IF NOT EXISTS GeekMetrik.Geek (
   EstrellasTotales INT NULL,
   Biografia VARCHAR(500) NULL,
-  Username CHAR(50) NOT NULL PRIMARY KEY,
+  Username CHAR(50),
+  IDGeek INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   CONSTRAINT Username
     FOREIGN KEY (Username)
     REFERENCES GeekMetrik.Usuario (Username)
@@ -62,13 +63,13 @@ CREATE TABLE IF NOT EXISTS GeekMetrik.Videojuego (
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS GeekMetrik.Codigo (
   Código CHAR(30) NOT NULL,
-  Username_Geek CHAR(50) NOT NULL,
+  Geek INT NOT NULL,
   FechaExpiración DATE NOT NULL,
   ID_Videojuego INT NOT NULL PRIMARY KEY,
   Uso TINYINT NOT NULL,
-  CONSTRAINT Username_Geek
-    FOREIGN KEY (Username_Geek)
-    REFERENCES GeekMetrik.Geek (Username)
+  CONSTRAINT Geek
+    FOREIGN KEY (Geek)
+    REFERENCES GeekMetrik.Geek (IDGeek)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   CONSTRAINT ID_Videojuego
@@ -92,11 +93,14 @@ CREATE TABLE IF NOT EXISTS GeekMetrik.RedSocial (
 CREATE TABLE IF NOT EXISTS GeekMetrik.Reseñas (
     ID_Reseña INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     ID_Vid INT NOT NULL,
-    UsernameGeek INT NOT NULL,
+    IDGeek INT NOT NULL,
     Titulo CHAR(30) NOT NULL,
     Reseña VARCHAR(500) NOT NULL,
     Calificacion NUMERIC(5) NOT NULL,
     CONSTRAINT ID_Vid FOREIGN KEY (ID_Vid)
         REFERENCES GeekMetrik.Videojuego (ID_Videojuego)
-        ON DELETE CASCADE ON UPDATE CASCADE
+        ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT IDGeek FOREIGN KEY (IDGeek)
+        REFERENCES GeekMetrik.Geek (IDGeek)
+        ON DELETE NO ACTION ON UPDATE CASCADE
 );
