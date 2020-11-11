@@ -98,5 +98,5 @@ CREATE TABLE IF NOT EXISTS GeekMetrik.Reseñas (
     Calificacion NUMERIC(5) NOT NULL,
     CONSTRAINT ID_Vid FOREIGN KEY (ID_Vid)
         REFERENCES GeekMetrik.Videojuego (ID_Videojuego)
-        ON DELETE CASCADE ON UPDATE CASCADE,
+        ON DELETE CASCADE ON UPDATE CASCADE
 );
