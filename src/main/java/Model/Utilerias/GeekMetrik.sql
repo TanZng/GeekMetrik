@@ -104,3 +104,6 @@ CREATE TABLE IF NOT EXISTS GeekMetrik.Reseñas (
         REFERENCES GeekMetrik.Geek (IDGeek)
         ON DELETE NO ACTION ON UPDATE CASCADE
 );
+
+INSERT INTO Usuario VALUES("Admin", "", "", "admin@admin.com", NULL, "Admin", "Admin", 0);
+INSERT INTO Admin VALUES("Admin", "Editor");
