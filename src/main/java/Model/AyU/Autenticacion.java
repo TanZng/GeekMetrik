@@ -85,7 +85,7 @@ public class Autenticacion {
         
         // Declaramos instruccion para tabla Geek
         String sql = "SELECT * FROM Usuario WHERE Username = ?";
-        String sqlBio = "SELECT Biografia FROM Geek WHERE Username = ?";
+        String sqlBio = "SELECT Biografia, IDGeek FROM Geek WHERE Username = ?";
         
         PreparedStatement ps;
         ResultSet rs;
@@ -130,7 +130,9 @@ public class Autenticacion {
             if ( rs.next() ) {
                 
                 bio = (rs.getString(1));
+                int id = (rs.getInt(4));
                 GUILogin.bio = bio;
+                this.autenticado.setID_User(id);
                 
             }
             

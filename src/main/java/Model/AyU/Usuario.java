@@ -17,6 +17,7 @@ public class Usuario {
     private String username;
     private boolean acces;
     private int tipo;
+    private int ID;
     
     /**
      * Constructor por defecto
@@ -150,9 +151,7 @@ public class Usuario {
      */
     public int getID_User() {
         
-       // Falta por implementar
-        //EL ID será el Username
-       return 0;
+       return this.ID;
         
     }
     
@@ -163,7 +162,7 @@ public class Usuario {
      */
     public void setID_User( int id ) {
         
-        // Falta por implementar
+        this.ID = id;
         
     }
 
