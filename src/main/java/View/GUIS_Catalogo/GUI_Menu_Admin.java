@@ -5,6 +5,7 @@
  */
 package View.GUIS_Catalogo;
 
+import Controller.AyU.OAyU;
 import Controller.OCatalogo.OCatalogo;
 import Controller.OCatalogo.OGestionarVideojuegos;
 import Controller.OReseñas.OResenias_Videojuego;
@@ -276,6 +277,7 @@ public class GUI_Menu_Admin extends javax.swing.JFrame {
     private void jButtonGestUsrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGestUsrActionPerformed
         // TODO add your handling code here:
         GUI_Gestion_Usuarios gui = new GUI_Gestion_Usuarios();
+        OAyU oyente = new OAyU(gui);
         gui.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButtonGestUsrActionPerformed

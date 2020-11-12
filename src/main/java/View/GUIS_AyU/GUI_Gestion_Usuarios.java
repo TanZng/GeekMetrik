@@ -245,12 +245,10 @@ public class GUI_Gestion_Usuarios extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Username", "Nombre", "ApellidoP", "ApellidoM", "EstrellasTotales", "Mail", "Bio"
+                "Nombre", "Mail", "Username"
             }
         ));
-        jTable.setGridColor(new java.awt.Color(255, 255, 255));
         jTable.setSelectionBackground(new java.awt.Color(104, 164, 255));
-        jTable.setSelectionForeground(new java.awt.Color(255, 255, 255));
         jScrollPane2.setViewportView(jTable);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);

@@ -2,6 +2,7 @@ package Controller.AyU;
 
 import Controller.OCatalogo.OMenuAdmin;
 import Model.AyU.*;
+import Model.Catalogo.Videojuego;
 import Model.Utilerias.hash;
 import View.GUIS_AyU.*;
 import View.GUIS_Catalogo.GUI_Menu_Admin;
@@ -30,11 +31,13 @@ public class OAyU implements ActionListener {
     private GUISignUp gui;
     private GUILogin gui1;
     private GUI_MiPerfil gui2;
+    private GUI_Gestion_Usuarios gui3;
     private GestorAyU gestor;
     private Autenticacion autenticar;
     private Registro registrar;
     public static File imagen;
     public static String ruta;
+    DefaultTableModel modelo;
     
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
@@ -59,7 +62,7 @@ public class OAyU implements ActionListener {
             
         }
         
-        else if( this.gestor != null ) {
+        else if( this.gui2 != null ) {
             
             if( actionEvent.getSource() == gui2.jButtonActualizar ) {
                 
@@ -67,6 +70,16 @@ public class OAyU implements ActionListener {
                 
             }
   
+        }
+        
+        else if( this.gui3 != null ) {
+            
+            if( actionEvent.getSource() == gui3.jButtonEliminar ) {
+                
+                eliminarUsuario();
+                
+            }
+            
         }
 
     }
@@ -88,6 +101,17 @@ public class OAyU implements ActionListener {
         
         this.gui1.jButtonLogin.addActionListener(this);
         this.gui1.jButtonRegresar.addActionListener(this);
+        
+    }
+    
+    public OAyU( GUI_Gestion_Usuarios gui ) {
+        
+        this.gui3 = gui;
+        this.gestor = new GestorAyU();
+        listarUsuarios( this.gui3.jTable );
+        
+        this.gui3.jButtonEliminar.addActionListener(this);
+        
         
     }
     
@@ -214,6 +238,62 @@ public class OAyU implements ActionListener {
             JOptionPane.showMessageDialog(null, "Fallo al actualizar :(");
             
         }
+        
+    }
+    
+    private void listarUsuarios( JTable tabla ) {
+        
+        modelo = (DefaultTableModel) tabla.getModel();
+        List<Usuario> lista = gestor.listarUsuarios();
+        Object[] objeto = new Object[3];
+        
+        for (int i = 0; i < lista.size(); i++) {
+            objeto[0] = lista.get(i).getNombre();
+            objeto[1] = lista.get(i).getCorreo();
+            objeto[2] = lista.get(i).getUsername();
+
+            modelo.addRow(objeto);
+            
+        }
+        
+        tabla.setModel(modelo);
+        
+    }
+    
+    public void eliminarUsuario() {
+        
+        int fila = this.gui3.jTable.getSelectedRow();
+        
+        if (fila == -1) {
+            
+            JOptionPane.showMessageDialog(gui, "Debe Seleccionar Una Fila!!!");
+            
+        } 
+        
+        else {
+            
+            String user = this.gui3.jTable.getValueAt(fila, 2).toString();
+            
+            gestor.eliminarUsuario(user);
+
+            JOptionPane.showMessageDialog(gui, "Se elimino el usuario " + user);
+            
+        }
+        
+        limpiarTabla();
+        
+    }
+    
+    public void limpiarTabla() {
+        
+        for (int i = 0; i < this.gui3.jTable.getRowCount(); i++) {
+            
+            modelo.removeRow(i);
+            i = i - 1;
+            
+        }
+        
+        listarUsuarios( this.gui3.jTable );
         
     }
     

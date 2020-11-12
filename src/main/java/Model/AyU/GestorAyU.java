@@ -1,5 +1,6 @@
 package Model.AyU;
 
+import Model.Catalogo.Videojuego;
 import Model.Utilerias.Conexion;
 import Model.Utilerias.hash;
 import View.GUIS_AyU.GUILogin;
@@ -9,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -86,6 +88,62 @@ public class GestorAyU {
             return false;
             
         }
+        
+    }
+    
+    public List<Usuario> listarUsuarios(){
+        List<Usuario> datos = new ArrayList<>();
+        try {
+            
+            Conexion conectar = new Conexion();
+            Connection con;
+            PreparedStatement ps;
+            ResultSet rs;
+            
+            
+            con = conectar.getConexion();
+            ps = con.prepareStatement("SELECT * FROM Usuario");
+            rs = ps.executeQuery();
+            
+            while (rs.next()) {
+
+                String nombre = (rs.getString(1));
+                String correo = (rs.getString(4));
+                String usr = (rs.getString(7));
+                
+                Usuario user = new Usuario();
+                user.setNombre(nombre);
+                user.setCorreo(correo);
+                user.setUsername(usr);
+                
+                datos.add(user);
+            }
+        } catch (Exception e) {
+        }
+        return datos;
+
+    }
+    
+    public int eliminarUsuario( String username ) {
+        
+        Conexion conectar = new Conexion();
+        Connection con;
+        PreparedStatement ps;
+        
+        int r = 0;
+        String sql = String.format("DELETE FROM Usuario where Username = '%s' ", username);
+        
+        try {
+            
+            con=conectar.getConexion();
+            ps=con.prepareStatement(sql);
+            r = ps.executeUpdate();
+            
+        } catch (Exception e) {
+            
+        }
+        
+        return r;
         
     }
 
