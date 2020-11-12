@@ -6,7 +6,10 @@
 package View.GUIS_Catalogo;
 
 import Controller.OCatalogo.OCatalogo;
+import Controller.OReseñas.OResenias_Videojuego;
 import Model.Catalogo.Videojuego;
+import Model.Resenias_Videojuego.Resenia;
+import View.GUIS_AyU.GUILogin;
 import View.GUIS_Resenias.GUI_EscribirResenia;
 import View.GUIS_Resenias.GUI_Ver_Resenias;
 
@@ -17,6 +20,10 @@ import View.GUIS_Resenias.GUI_Ver_Resenias;
 public class GUI_Mostrar_Videojuego extends javax.swing.JFrame {
 
     public static Videojuego v;
+    public static int cuenta;
+    public static Resenia r1;
+    public static Resenia r2;
+    public static Resenia r3;
 
     /**
      * Creates new form GUI_Mostrar_Videojuego
@@ -28,6 +35,22 @@ public class GUI_Mostrar_Videojuego extends javax.swing.JFrame {
         this.getContentPane().setBackground(new java.awt.Color(72, 72, 72));
         jTextAreaDesc.setLineWrap(true);
         jTextAreaDesc.setWrapStyleWord(true);
+        
+        
+        if(GUILogin.autenticado != null) {
+
+            if( GUILogin.autenticado.getTipo() == 1 ) {
+                this.jButtonSignCrearRes.setEnabled(true);
+            }
+        }
+
+        else {
+
+            //JOptionPane.showMessageDialog(null, "Hola publico en general!");
+            this.jButtonSignCrearRes.setEnabled(false);
+
+
+        }
     }
 
     /**

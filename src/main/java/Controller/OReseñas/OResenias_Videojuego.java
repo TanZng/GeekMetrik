@@ -39,6 +39,7 @@ public class OResenias_Videojuego implements ActionListener{
     
     //Guis
     private GUI_Gestionar_Resenias Gui_gestora_resenias;
+    private GUI_EscribirResenia Gui_escritora;
     
     @Override
     public void actionPerformed(ActionEvent actionEvent){
@@ -49,23 +50,30 @@ public class OResenias_Videojuego implements ActionListener{
         }
     }
     
-    
+    //Escritor de reseñas de videojuegos
+    public OResenias_Videojuego(GUI_EscribirResenia Gui_escritora){
+        this.Gui_escritora = Gui_escritora;
+        
+    }
     //Gestor reseñas videojuegos
     public OResenias_Videojuego(GUI_Gestionar_Resenias gui_gestores_resenias){
         Gui_gestora_resenias = gui_gestores_resenias;
         listar_resenias(Gui_gestora_resenias.jTable);
+        this.Gui_gestora_resenias.jButtonRegresar.addActionListener(this);
+        this.Gui_gestora_resenias.jButtonEliminar.addActionListener(this);
+        
     }
     
     //Metodo para la funcionalidad del gestor de reseñas de videojuegos y mis reseñas
     public void eliminar_reseña() {
         int fila = Gui_gestora_resenias.jTable.getSelectedRow();
         if (fila == -1) {
-            JOptionPane.showMessageDialog(Gui_gestora_resenias, "Debe Seleccionar Una Fila!!!");
+            JOptionPane.showMessageDialog(Gui_gestora_resenias, "Selecciona una fila, por favor.");
         } else {
             int id_resenia = Integer.parseInt((String) Gui_gestora_resenias.jTable.getValueAt(fila, 0).toString());
             Gestor_resenias.eliminar_resenia(id_resenia);
-            System.out.println("Se elimino el Juego con id " + id_resenia);
-            JOptionPane.showMessageDialog(Gui_gestora_resenias, "Videojuego Eliminado!!!");
+            System.out.println("Reseña con el id: " + id_resenia + " eliminada.");
+            JOptionPane.showMessageDialog(Gui_gestora_resenias, "Reseña eliminada.");
         }
         limpiar_resenias();
     }
