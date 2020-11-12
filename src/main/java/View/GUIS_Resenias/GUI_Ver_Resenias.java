@@ -6,6 +6,7 @@
 package View.GUIS_Resenias;
 
 import Controller.OCatalogo.OMostrarVideojuego;
+import Model.Resenias_Videojuego.Resenia;
 import View.GUIS_Catalogo.GUI_Mostrar_Videojuego;
 
 /**
@@ -13,6 +14,11 @@ import View.GUIS_Catalogo.GUI_Mostrar_Videojuego;
  * @author thann
  */
 public class GUI_Ver_Resenias extends javax.swing.JFrame {
+    
+    public static int cuenta;
+    public static Resenia r1;
+    public static Resenia r2;
+    public static Resenia r3;
 
     /**
      * Creates new form GUI_Ver_Resenias

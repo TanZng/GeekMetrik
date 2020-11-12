@@ -32,6 +32,7 @@ public class OResenias_Videojuego implements ActionListener{
     //Atributos del oyente
     private Geek Usuario;
     private GUILogin Login;
+    private Videojuego videojuego;
     DefaultTableModel Modelo = new DefaultTableModel();
     
     //Gestor
@@ -41,6 +42,9 @@ public class OResenias_Videojuego implements ActionListener{
     private GUI_Gestionar_Resenias Gui_gestora_resenias;
     private GUI_EscribirResenia Gui_escritora;
     
+    //Corroborar autenticacion
+    private GUILogin login = new GUILogin();
+    
     @Override
     public void actionPerformed(ActionEvent actionEvent){
         if(actionEvent.getSource() == Gui_gestora_resenias.jButtonEliminar){
@@ -48,16 +52,26 @@ public class OResenias_Videojuego implements ActionListener{
             limpiar_resenias();
             listar_resenias(Gui_gestora_resenias.jTable);
         }
+        
+        if(actionEvent.getSource() == Gui_escritora.jButtonGuardar){
+            if (Gui_escritora.jTextFieldTitulo.getText().equals("") || Gui_escritora.jTextAreaContenido.getText().equals("")) {
+                JOptionPane.showMessageDialog(Gui_escritora, "Imposible intentar agregar una reseña sin todos los campos.");
+            }
+            else {
+                escribir_reseña();
+            }
+        }
     }
     
     //Escritor de reseñas de videojuegos
-    public OResenias_Videojuego(GUI_EscribirResenia Gui_escritora){
+    public OResenias_Videojuego(GUI_EscribirResenia Gui_escritora,Videojuego videojuego){
         this.Gui_escritora = Gui_escritora;
-        
+        this.videojuego = videojuego;
+        this.Gui_escritora.jButtonGuardar.addActionListener(this);
     }
     //Gestor reseñas videojuegos
     public OResenias_Videojuego(GUI_Gestionar_Resenias gui_gestores_resenias){
-        Gui_gestora_resenias = gui_gestores_resenias;
+        this.Gui_gestora_resenias = gui_gestores_resenias;
         listar_resenias(Gui_gestora_resenias.jTable);
         this.Gui_gestora_resenias.jButtonRegresar.addActionListener(this);
         this.Gui_gestora_resenias.jButtonEliminar.addActionListener(this);
@@ -95,11 +109,27 @@ public class OResenias_Videojuego implements ActionListener{
         tabla.setModel(Modelo);
     }
     
-    //Metodo parala funcionalidad del gestor de reseñas de videojuegos y mis reseñas
+    //Metodo para la funcionalidad del gestor de reseñas de videojuegos y mis reseñas
     public void limpiar_resenias(){
         for (int i = 0; i < Gui_gestora_resenias.jTable.getRowCount(); i++) {
             Modelo.removeRow(i);
             i = i - 1;
+        }
+    }
+    
+    
+    //Metodo para la funcionalidad del escritor de reseñas
+    public void escribir_reseña(){
+        String titulo = Gui_escritora.jTextFieldTitulo.getText();
+        String contenido = Gui_escritora.jTextAreaContenido.getText();
+        int estrellas = Gui_escritora.jSpinnerEstrellas.getComponentCount();
+        Usuario geek = login.autenticado;
+        int id_geek = geek.getID_User();
+        int id_videojuego = videojuego.getId_videojuego();
+        if(Gestor_resenias.aniadir_resenia(estrellas,titulo,contenido,id_geek,id_videojuego)){
+            JOptionPane.showMessageDialog(Gui_escritora, "Reseña agregada con exito.");
+        }else{
+            JOptionPane.showMessageDialog(Gui_escritora, "Error :(");
         }
     }
 }

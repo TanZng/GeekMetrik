@@ -20,10 +20,6 @@ import View.GUIS_Resenias.GUI_Ver_Resenias;
 public class GUI_Mostrar_Videojuego extends javax.swing.JFrame {
 
     public static Videojuego v;
-    public static int cuenta;
-    public static Resenia r1;
-    public static Resenia r2;
-    public static Resenia r3;
 
     /**
      * Creates new form GUI_Mostrar_Videojuego
@@ -241,6 +237,7 @@ public class GUI_Mostrar_Videojuego extends javax.swing.JFrame {
     private void jButtonSignCrearResActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSignCrearResActionPerformed
         // TODO add your handling code here:
         GUI_EscribirResenia gui = new GUI_EscribirResenia();
+        OResenias_Videojuego con = new OResenias_Videojuego(gui,v);
         gui.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButtonSignCrearResActionPerformed
