@@ -266,6 +266,7 @@ public class GUI_Gestionar_Resenias extends javax.swing.JFrame {
 
         jTable.setAutoCreateRowSorter(true);
         jTable.setBackground(new java.awt.Color(91, 91, 91));
+        jTable.setForeground(new java.awt.Color(255, 255, 255));
         jTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
