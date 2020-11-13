@@ -31,10 +31,9 @@ import java.util.Objects;
 public class OResenias_Videojuego implements ActionListener{
     
     //Atributos del oyente
-    private Geek Usuario;
     private GUILogin Login = new GUILogin();
-    private Videojuego videojuego;
     DefaultTableModel Modelo = new DefaultTableModel();
+    Videojuego videojuego = new Videojuego();
     
     //Gestor
     private Gestor_ReseniaVideojuego Gestor_resenias = new Gestor_ReseniaVideojuego();
@@ -42,9 +41,19 @@ public class OResenias_Videojuego implements ActionListener{
     //Guis
     private GUI_Gestionar_Resenias Gui_gestora_resenias;
     private GUI_EscribirResenia Gui_escritora;
+    private GUI_Ver_Resenias Gui_reseñas_videojuegoP;
     
     //Corroborar autenticacion
     private GUILogin login = new GUILogin();
+    
+    //Mis resenias
+    ArrayList<JTextField> Titulos;
+    ArrayList<JTextField> Estrellas;
+    ArrayList<JTextArea> Contenidos;
+    ArrayList<JTextField> geeks;
+    ArrayList<Resenia> bloques;
+    List<Resenia> lista;
+    ListaResenias lista_clase;
     
     @Override
     public void actionPerformed(ActionEvent actionEvent){
@@ -68,6 +77,8 @@ public class OResenias_Videojuego implements ActionListener{
                     Gui_escritora.setVisible(false);
                 }
             }
+        }else if(Gui_reseñas_videojuegoP != null){
+            lista_clase = Gestor_resenias.listar_resenias_particulares(videojuego.getId_videojuego());
         }
     }
     
@@ -87,6 +98,11 @@ public class OResenias_Videojuego implements ActionListener{
         
     }
     
+    //Reseñas de un videojuego en particular
+    public OResenias_Videojuego(GUI_Ver_Resenias reseñas_particulares){
+        this.Gui_reseñas_videojuegoP = reseñas_particulares;
+        
+    }
     //Metodo para la funcionalidad del gestor de reseñas de videojuegos y mis reseñas
     public void eliminar_reseña() {
         int fila = Gui_gestora_resenias.jTable.getSelectedRow();
@@ -138,5 +154,48 @@ public class OResenias_Videojuego implements ActionListener{
         }else{
             JOptionPane.showMessageDialog(Gui_escritora, "Error :(");
         }
+    }
+    
+    
+    //Metodo para ver reseñas
+    public void mostrar_3resenias(){
+        
+    }
+    
+    //Prepara los labels
+    private void preparar_labels() {
+        
+        /*
+        ArrayList<JTextField> Titulos;
+    ArrayList<JTextField> Estrellas;
+    ArrayList<JTextArea> Contenidos;
+    ArrayList<JTextArea> geeks;
+    ArrayList<Resenia> bloques;
+        */
+        Titulos = new ArrayList(3);
+        Titulos.add(Gui_reseñas_videojuegoP.jTextFieldTitulo1);
+        Titulos.add(Gui_reseñas_videojuegoP.jTextFieldTitulo2);
+        Titulos.add(Gui_reseñas_videojuegoP.jTextFieldTitulo3);
+
+        Estrellas = new ArrayList(3);
+        Estrellas.add(Gui_reseñas_videojuegoP.jTextFieldEstrellas1);
+        Estrellas.add(Gui_reseñas_videojuegoP.jTextFieldEstrellas2);
+        Estrellas.add(Gui_reseñas_videojuegoP.jTextFieldEstrellas3);
+
+        bloques = new ArrayList(3);
+        bloques.add(Gui_reseñas_videojuegoP.r1);
+        bloques.add(Gui_reseñas_videojuegoP.r2);
+        bloques.add(Gui_reseñas_videojuegoP.r3);
+        
+        geeks = new ArrayList(3);
+        geeks.add(Gui_reseñas_videojuegoP.jTextFieldUser1);
+        geeks.add(Gui_reseñas_videojuegoP.jTextFieldUser2);
+        geeks.add(Gui_reseñas_videojuegoP.jTextFieldUser3);
+
+        Contenidos = new ArrayList(3);
+        Contenidos.add(Gui_reseñas_videojuegoP.jTextAreaContenido1);
+        Contenidos.add(Gui_reseñas_videojuegoP.jTextAreaContenido2);
+        Contenidos.add(Gui_reseñas_videojuegoP.jTextAreaContenido3);
+
     }
 }

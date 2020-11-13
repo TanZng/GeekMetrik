@@ -221,4 +221,29 @@ public class Gestor_ReseniaVideojuego {
         return mis_resenias;
     }
     
+    public ListaResenias listar_resenias_particulares(int id_videojuego){
+        ListaResenias mis_resenias = new ListaResenias();
+        try {
+            Conexion conectar = new Conexion();
+            Connection signal;
+            PreparedStatement ps;
+            ResultSet rs;
+            
+            signal = conectar.getConexion();
+            ps = signal.prepareStatement("SELECT * FROM Reseñas WHERE ID_Vid = '%d' ", id_videojuego);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                int id_resenia = (rs.getInt(1));         //Obtiene el id de la reseña
+                int id_geek = (rs.getInt(3));           // Obtiene el id del geek asociado
+                String titulo = (rs.getString(4));      // Obtiene el titulo de la reseña
+                String contenido = (rs.getString(5));   // Obtiene el contenido de la reseña
+                int calificación = (rs.getInt(6));      // Obtiene la cantidad de estrellas
+
+                Resenia resenia = new Resenia(calificación,titulo,contenido,id_geek,id_resenia,id_videojuego);
+                mis_resenias.aniadir_resenia(resenia);
+            }
+        } catch (Exception e) {
+        }
+        return mis_resenias;
+    }
 }
