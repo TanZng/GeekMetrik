@@ -10,7 +10,9 @@ Se requiere:
 Ejecute los comandos de **GeekMetrik.sql** usando MySQL Workbench o Command Line, para iniciar la base de datos. Ubicada en GeekMetrik\src\main\java\Model\Utilerias\GeekMetrik.sql
 
 Se creará el Admin por default: 
+
 user: Admin
+
 password: Admin
 
 ### Ejecutar
