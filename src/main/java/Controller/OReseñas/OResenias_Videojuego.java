@@ -31,7 +31,7 @@ public class OResenias_Videojuego implements ActionListener{
     
     //Atributos del oyente
     private Geek Usuario;
-    private GUILogin Login;
+    private GUILogin Login = new GUILogin();
     private Videojuego videojuego;
     DefaultTableModel Modelo = new DefaultTableModel();
     
@@ -97,7 +97,6 @@ public class OResenias_Videojuego implements ActionListener{
     }
     //Metodo para la funcionalidad del gestor de reseñas de videojuegos
     public void listar_resenias_o(JTable tabla){
-        System.out.println("LISTANDO...\n");
         Modelo = (DefaultTableModel) tabla.getModel();
         List<Resenia> lista = Gestor_resenias.listar_resenias();
         Object[] objeto = new Object[6];
@@ -128,9 +127,9 @@ public class OResenias_Videojuego implements ActionListener{
         String contenido = Gui_escritora.jTextAreaContenido.getText();
         int estrellas = (Integer) Gui_escritora.jSpinnerEstrellas.getValue();
         Usuario geek = login.autenticado;
-        int id_geek = geek.getID_User();
+        String user_geek = geek.getUsername();
         int id_videojuego = videojuego.getId_videojuego();
-        if(Gestor_resenias.aniadir_resenia(estrellas,titulo,contenido,id_geek,id_videojuego) == true){
+        if(Gestor_resenias.aniadir_resenia(estrellas,titulo,contenido,user_geek,id_videojuego) == true){
             JOptionPane.showMessageDialog(Gui_escritora, "Reseña agregada con exito.");
         }else{
             JOptionPane.showMessageDialog(Gui_escritora, "Error :(");

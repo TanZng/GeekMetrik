@@ -21,6 +21,7 @@ import java.util.ArrayList;
 public class Gestor_ReseniaVideojuego {
     
     //Atributos de la clase gestor_reseñas
+    
     private ListaResenias resenias;
     
     //Constructor del gestor reseñas
@@ -40,16 +41,29 @@ public class Gestor_ReseniaVideojuego {
     }
     
     //Escribir reseña (Añadir resenia) (Construcción)
-    public boolean aniadir_resenia(int estrellas,String titulo_resenia, String contenido,int geek_id,int videojuego_id){
-        Resenia nueva_resenia = new Resenia(estrellas,titulo_resenia,contenido,geek_id,0,videojuego_id);
-        String sql ="INSERT INTO Reseñas(ID_Vid,IDGeek,Titulo,Reseña,Calificacion,)VALUES(?,?,?,?,?)";
-
+    public boolean aniadir_resenia(int estrellas,String titulo_resenia, String contenido,String user_name,int videojuego_id){
         boolean exito = false;
+        int  geek_id = 3;
+        String consulta = String.format("SELECT IDGeek FROM Geek WHERE Username =  '%s'",user_name);
         try {
             Conexion conectar = new Conexion();
             Connection signal;
             PreparedStatement ps;
             ResultSet rs;
+            signal = conectar.getConexion();
+            ps = signal.prepareStatement(consulta);
+            rs = ps.executeQuery();
+            geek_id = (rs.getInt(0)); 
+            
+        } catch (Exception e) {
+        }
+        System.out.print(geek_id);
+        String sql = ("INSERT INTO Reseñas(ID_Vid,IDGeek,Titulo,Reseña,Calificacion)VALUES(?,?,?,?,?)");
+        Resenia nueva_resenia = new Resenia(estrellas,titulo_resenia,contenido,4,0,videojuego_id);
+        try {
+            Conexion conectar = new Conexion();
+            Connection signal;
+            PreparedStatement ps;
             signal = conectar.getConexion();
             
             ps = signal.prepareStatement(sql);
@@ -58,8 +72,6 @@ public class Gestor_ReseniaVideojuego {
             ps.setString(3, nueva_resenia.getTitulo_resenia());
             ps.setString(4, nueva_resenia.getContenido());
             ps.setInt(5, nueva_resenia.getPuntuacion());
-            System.out.print(" Puntuacion: "+nueva_resenia.getPuntuacion());
-            System.out.print(ps.executeUpdate());
             if(ps.executeUpdate() == 1 ){
                 exito = true;
             }
@@ -71,7 +83,7 @@ public class Gestor_ReseniaVideojuego {
     //Eliminar resenia
     public boolean eliminar_resenia(int id_resenia){
         boolean eliminacion = false;
-        String sql = String.format("DELETE FROM Reseñas WHERE ID_Reseña = '%d' ", id_resenia);
+        String sql = String.format("DELETE FROM Reseñas WHERE ID_Reseña = '%d'", id_resenia);
         try {
             Conexion conectar = new Conexion();
             Connection signal;
