@@ -100,7 +100,6 @@ public class Gestor_ReseniaVideojuego {
                 ps = signal.prepareStatement(promedio);
                 ps.setInt(1, videojuego_id);
                 ps.setInt(2, videojuego_id);
-                System.out.print(videojuego_id);
                 ps.executeUpdate();
             } catch (Exception e) {
             }
@@ -110,12 +109,37 @@ public class Gestor_ReseniaVideojuego {
     //Eliminar resenia
     public boolean eliminar_resenia(int id_resenia){
         boolean eliminacion = false;
+        int videojuego_id = 0;
+        //Obtener el id_videojuego
+        String consulta = "SELECT ID_Vid FROM Reseñas WHERE ID_Reseña = ?";
+        
+        // Conectamos con la base de datos
+        Conexion SQL = new Conexion();
+        Connection con = SQL.getConexion();
+        PreparedStatement ps;
+        ResultSet rs;
+
+        try {
+            con = SQL.getConexion();
+            ps = con.prepareStatement(consulta);
+            ps.setInt(1, id_resenia);
+            rs = ps.executeQuery();
+
+            if( rs.next() ) {
+
+                videojuego_id = (rs.getInt(1));
+
+            }
+
+        } catch (Exception e) {
+
+        }
+        
+        //Eliminar la resenia
         String sql = String.format("DELETE FROM Reseñas WHERE ID_Reseña = '%d'", id_resenia);
         try {
             Conexion conectar = new Conexion();
             Connection signal;
-            PreparedStatement ps;
-            
             signal = conectar.getConexion();
             ps = signal.prepareStatement(sql);
             if(ps.executeUpdate() == 1){
@@ -123,6 +147,20 @@ public class Gestor_ReseniaVideojuego {
             }
             
         }catch (Exception e) {
+        }
+        
+        String promedio = "UPDATE Videojuego SET Estrellas = (SELECT AVG(Calificacion) FROM Reseñas WHERE ID_Vid = ?) WHERE ID_Videojuego = ?;";
+        if(eliminacion == true){
+            try {
+                Conexion conectar = new Conexion();
+                Connection signal;
+                signal = conectar.getConexion();
+                ps = signal.prepareStatement(promedio);
+                ps.setInt(1, videojuego_id);
+                ps.setInt(2, videojuego_id);
+                ps.executeUpdate();
+            } catch (Exception e) {
+            }
         }
         return eliminacion;
     }

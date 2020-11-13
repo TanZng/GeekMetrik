@@ -5,6 +5,7 @@
  */
 package Controller.OReseñas;
 
+import Controller.OCatalogo.OMostrarVideojuego;
 import Model.Resenias_Videojuego.*;
 import Model.Catalogo.*;
 import Model.AyU.*;
@@ -61,6 +62,10 @@ public class OResenias_Videojuego implements ActionListener{
                 }
                 else {
                     escribir_reseña();
+                    GUI_Mostrar_Videojuego gui = new GUI_Mostrar_Videojuego();
+                    OMostrarVideojuego con = new OMostrarVideojuego(gui.v, gui);
+                    gui.setVisible(true);
+                    Gui_escritora.setVisible(false);
                 }
             }
         }
@@ -90,7 +95,6 @@ public class OResenias_Videojuego implements ActionListener{
         } else {
             int id_resenia = Integer.parseInt((String) Gui_gestora_resenias.jTable.getValueAt(fila, 0).toString());
             Gestor_resenias.eliminar_resenia(id_resenia);
-            System.out.println("Reseña con el id: " + id_resenia + " eliminada.");
             JOptionPane.showMessageDialog(Gui_gestora_resenias, "Reseña eliminada.");
         }
         limpiar_resenias();
