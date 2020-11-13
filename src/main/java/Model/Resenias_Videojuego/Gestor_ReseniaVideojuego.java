@@ -56,11 +56,6 @@ public class Gestor_ReseniaVideojuego {
         ResultSet rs;
 
         try {
-            Conexion conectar = new Conexion();
-            Connection signal;
-            signal = conectar.getConexion();
-            ps = signal.prepareStatement(consulta);
-
             con = SQL.getConexion();
             ps = con.prepareStatement(consulta);
             ps.setString(1, user_name);
@@ -94,7 +89,22 @@ public class Gestor_ReseniaVideojuego {
             }
         } catch (Exception e) {
         }
-        
+
+        //Sacamos el promedio (Estrellas)
+        String promedio = "UPDATE Videojuego SET Estrellas = (SELECT AVG(Calificacion) FROM Reseñas WHERE ID_Vid = ?) WHERE ID_Videojuego = ?;";
+        if(exito == true){
+            try {
+                Conexion conectar = new Conexion();
+                Connection signal;
+                signal = conectar.getConexion();
+                ps = signal.prepareStatement(promedio);
+                ps.setInt(1, videojuego_id);
+                ps.setInt(2, videojuego_id);
+                System.out.print(videojuego_id);
+                ps.executeUpdate();
+            } catch (Exception e) {
+            }
+        }
         return exito;
     }
     //Eliminar resenia
