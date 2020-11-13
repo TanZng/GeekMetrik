@@ -1,33 +1,18 @@
-# GeekMetrik
+# **GeekMetrik**
+Se requiere:
+- Java 11
+- NetBeans 11 o superior / IntelliJ IDEA 2020.1
+- Maven 4
+- MySQL 8.0
+- mysql-connector-java 8.0.22
 
-Para clonar el proyecto usen
+### Base de datos
+Ejecute los comandos de **GeekMetrik.sql** usando MySQL Workbench o Command Line, para iniciar la base de datos. Ubicada en GeekMetrik\src\main\java\Model\Utilerias\GeekMetrik.sql
 
-    git clone https://github.com/TanZng/GeekMetrik.git
+Se creará el Admin por default: 
+user: Admin
+password: Admin
 
-Los siguientes comandos los deben hacer en una consola en el folder del proyecto
+### Ejecutar
+Abra en un IDE y ejecute GUI_Catalogo.java
 
-
-Antes de guardar sus cambios usen
-
-    git pull
-
-Para ver que archivos están en modo "listos para ser guardados" usen
-
-    git status
-
-Si un archivo está en rojo usen
-
-    git add nombre_archivo
-Para poner todos los archivos en "listo para guardar" usen
-
-    git add .
-
-Para guardar los archivos que están en modo "listos para guardar" usen
-
-    git commit -m "Breve descripción de los cambios que están guardando"
-
-Para subir sus cambios a Github usen
-
-    git push
-
- Es importante hacer `git pull` antes de intentar subir sus cambios
