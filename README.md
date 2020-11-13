@@ -1,4 +1,10 @@
-# **GeekMetrik**
+
+
+# **GeekMetrik** <img src="https://github.com/TanZng/GeekMetrik/blob/master/src/main/resources/GeekMetrik.png" width="100" align="left" />
+ 
+ 
+ ---
+ 
 Se requiere:
 - Java 11
 - NetBeans 11 o superior / IntelliJ IDEA 2020.1
@@ -16,6 +22,7 @@ Se creará el Admin por default:
 user: Admin
 
 password: Admin
+
 
 Edite el archivo **Conexion.java** y en el campo de password coloque su contraseña para MySQL.
 
