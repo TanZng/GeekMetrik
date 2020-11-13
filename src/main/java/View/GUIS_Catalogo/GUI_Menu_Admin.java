@@ -263,7 +263,6 @@ public class GUI_Menu_Admin extends javax.swing.JFrame {
     private void jButtonGestResActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGestResActionPerformed
         // TODO add your handling code here:
         GUI_Gestionar_Resenias gui = new GUI_Gestionar_Resenias();
-        
         //Llamar al Oyente de las reseñas
         OResenias_Videojuego con = new OResenias_Videojuego(gui);
         gui.setVisible(true);
