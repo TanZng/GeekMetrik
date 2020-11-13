@@ -78,7 +78,25 @@ public class OResenias_Videojuego implements ActionListener{
                 }
             }
         }else if(Gui_reseñas_videojuegoP != null){
-            lista_clase = Gestor_resenias.listar_resenias_particulares(videojuego.getId_videojuego());
+            if (actionEvent.getSource() == Gui_reseñas_videojuegoP.jButtonNext){
+                if ( Gui_reseñas_videojuegoP.cuenta < lista_clase.getResenias_totales().size()) {
+                    cargar_resenias();
+                }
+                else {
+                    JOptionPane.showMessageDialog(Gui_reseñas_videojuegoP, "Ya no hay más reseñas por mostrar!");
+                }
+            }
+            if (actionEvent.getSource() == Gui_reseñas_videojuegoP.jButtonAfter){
+                int restar = contar_resenias();
+                Gui_reseñas_videojuegoP.cuenta = Gui_reseñas_videojuegoP.cuenta - restar - 3;
+                if ( Gui_reseñas_videojuegoP.cuenta < 0) {
+                    JOptionPane.showMessageDialog(Gui_reseñas_videojuegoP, "Ya no hay más reseñas por mostrar!");
+                    Gui_reseñas_videojuegoP.cuenta = 3;
+                }
+                else {
+                    cargar_resenias();
+                }
+            }
         }
     }
     
@@ -99,9 +117,22 @@ public class OResenias_Videojuego implements ActionListener{
     }
     
     //Reseñas de un videojuego en particular
-    public OResenias_Videojuego(GUI_Ver_Resenias reseñas_particulares){
+    public OResenias_Videojuego(GUI_Ver_Resenias reseñas_particulares,Videojuego videojuego){
         this.Gui_reseñas_videojuegoP = reseñas_particulares;
-        
+        this.Gui_reseñas_videojuegoP.jButtonAfter.addActionListener(this);
+        this.Gui_reseñas_videojuegoP.jButtonNext.addActionListener(this);
+        this.Gui_reseñas_videojuegoP.jButtonRegresar.addActionListener(this);
+        this.videojuego = videojuego;
+        if(this.Gui_reseñas_videojuegoP.r1 == null) {
+            ver_todas_resenias();
+        }else{
+            lista_clase = Gestor_resenias.listar_resenias_particulares(videojuego.getId_videojuego());
+            preparar_labels();
+            mostrar_3resenias();
+        }
+        this.Gui_reseñas_videojuegoP.r1 = null;
+        this.Gui_reseñas_videojuegoP.r2 = null;
+        this.Gui_reseñas_videojuegoP.r3 = null;
     }
     //Metodo para la funcionalidad del gestor de reseñas de videojuegos y mis reseñas
     public void eliminar_reseña() {
@@ -159,19 +190,26 @@ public class OResenias_Videojuego implements ActionListener{
     
     //Metodo para ver reseñas
     public void mostrar_3resenias(){
-        
+        for (int i = 0; i < 3; i++) {
+            mostrar_una_resenia( Titulos.get(i), Estrellas.get(i), bloques.get(i), geeks.get(i),Contenidos.get(i));
+        }
     }
-    
+    //Muestra una reseña de un videojuego
+    public void mostrar_una_resenia( JTextField titulo, JTextField estrellas, Resenia resena, JTextField geek,JTextArea contenido){
+        if( resena != null) {
+            titulo.setText(resena.getTitulo_resenia());
+            estrellas.setText(String.valueOf(resena.getPuntuacion()));
+            geek.setText(String.valueOf(resena.getId_geek_asociado()));
+            contenido.setText(resena.getContenido());
+        }
+        else{
+            titulo.setText("Nada que mostrar :(");
+            estrellas.setText(String.valueOf(404));
+            geek.setText("@Geek_desconocido");
+        }
+    }
     //Prepara los labels
     private void preparar_labels() {
-        
-        /*
-        ArrayList<JTextField> Titulos;
-    ArrayList<JTextField> Estrellas;
-    ArrayList<JTextArea> Contenidos;
-    ArrayList<JTextArea> geeks;
-    ArrayList<Resenia> bloques;
-        */
         Titulos = new ArrayList(3);
         Titulos.add(Gui_reseñas_videojuegoP.jTextFieldTitulo1);
         Titulos.add(Gui_reseñas_videojuegoP.jTextFieldTitulo2);
@@ -197,5 +235,50 @@ public class OResenias_Videojuego implements ActionListener{
         Contenidos.add(Gui_reseñas_videojuegoP.jTextAreaContenido2);
         Contenidos.add(Gui_reseñas_videojuegoP.jTextAreaContenido3);
 
+    }
+    
+    //Limpiar resenias
+    public void vaciar_3resenias(){
+        Gui_reseñas_videojuegoP.r1 = null;
+        Gui_reseñas_videojuegoP.r2 = null;
+        Gui_reseñas_videojuegoP.r3 = null;
+    }
+    
+    //Siguiente resenias
+    public void next(){
+        if(Gui_reseñas_videojuegoP.cuenta < lista_clase.getResenias_totales().size()) {
+            Gui_reseñas_videojuegoP.r1 = lista_clase.getResenias_totales().get(Gui_reseñas_videojuegoP.cuenta);
+            Gui_reseñas_videojuegoP.cuenta++;
+        }
+        if(Gui_reseñas_videojuegoP.cuenta < lista_clase.getResenias_totales().size()) {
+            Gui_reseñas_videojuegoP.r2 = lista_clase.getResenias_totales().get(Gui_reseñas_videojuegoP.cuenta);
+            Gui_reseñas_videojuegoP.cuenta++;
+        }
+        if(Gui_reseñas_videojuegoP.cuenta < lista_clase.getResenias_totales().size()) {
+            Gui_reseñas_videojuegoP.r3 = lista_clase.getResenias_totales().get(Gui_reseñas_videojuegoP.cuenta);
+            Gui_reseñas_videojuegoP.cuenta++;
+        }
+    }
+    
+    //Ver todas las reseñas
+    public void ver_todas_resenias(){
+        lista_clase = Gestor_resenias.listar_resenias_particulares(videojuego.getId_videojuego());
+        cargar_resenias();
+    }
+    
+    public void cargar_resenias(){
+        vaciar_3resenias();
+        next();
+        preparar_labels();
+        mostrar_3resenias();
+    }
+
+    private int contar_resenias() {
+        int x = 0;
+        for (int i = 0; i < 3; i++) {
+            if (bloques.get(i) != null)
+                x++;
+        }
+        return x;
     }
 }

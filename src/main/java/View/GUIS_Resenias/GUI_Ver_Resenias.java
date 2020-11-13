@@ -393,7 +393,7 @@ public class GUI_Ver_Resenias extends javax.swing.JFrame {
                         .addComponent(jTextFieldTitulo3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(11, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jTextFieldEstrellas3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -580,9 +580,9 @@ public class GUI_Ver_Resenias extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTextArea jTextAreaContenido1;
-    private javax.swing.JTextArea jTextAreaContenido2;
-    private javax.swing.JTextArea jTextAreaContenido3;
+    public javax.swing.JTextArea jTextAreaContenido1;
+    public javax.swing.JTextArea jTextAreaContenido2;
+    public javax.swing.JTextArea jTextAreaContenido3;
     public javax.swing.JTextField jTextFieldEstrellas1;
     public javax.swing.JTextField jTextFieldEstrellas2;
     public javax.swing.JTextField jTextFieldEstrellas3;
