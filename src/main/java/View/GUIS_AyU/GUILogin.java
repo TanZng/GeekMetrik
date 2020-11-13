@@ -29,6 +29,7 @@ public class GUILogin extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         this.getContentPane().setBackground(new java.awt.Color(72, 72, 72));
         resizeImage();
+        //this.jLabelPassword;
         
     }
     

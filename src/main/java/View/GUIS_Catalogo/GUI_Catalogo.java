@@ -5,11 +5,9 @@
  */
 package View.GUIS_Catalogo;
 
-import Controller.AyU.OAyU;
+import Controller.OAyU.OAyU;
 import Controller.OCatalogo.OCatalogo;
-import Controller.OCatalogo.OGestionarVideojuegos;
 import Controller.OCatalogo.OMostrarVideojuego;
-import Model.AyU.Usuario;
 import Model.Catalogo.Videojuego;
 import View.GUIS_AyU.GUILogin;
 import View.GUIS_AyU.GUISignUp;
@@ -17,7 +15,6 @@ import View.GUIS_AyU.GUI_MiPerfil;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 
 /**
  *

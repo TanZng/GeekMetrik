@@ -142,6 +142,7 @@ public class GUI_Gestionar_Resenias extends javax.swing.JFrame {
         jTextAreaContenido.setBackground(new java.awt.Color(91, 91, 91));
         jTextAreaContenido.setColumns(20);
         jTextAreaContenido.setForeground(new java.awt.Color(255, 255, 255));
+        jTextAreaContenido.setLineWrap(true);
         jTextAreaContenido.setRows(3);
         jTextAreaContenido.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
         jScrollPane1.setViewportView(jTextAreaContenido);

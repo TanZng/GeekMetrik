@@ -1,12 +1,9 @@
-package Controller.AyU;
+package Controller.OAyU;
 
 import Controller.OCatalogo.OMenuAdmin;
 import Model.AyU.*;
-import Model.Catalogo.Videojuego;
-import Model.Utilerias.hash;
 import View.GUIS_AyU.*;
 import View.GUIS_Catalogo.GUI_Menu_Admin;
-import View.GUIS_Catalogo.*;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;

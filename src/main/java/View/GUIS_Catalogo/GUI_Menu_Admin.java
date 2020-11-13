@@ -5,8 +5,7 @@
  */
 package View.GUIS_Catalogo;
 
-import Controller.AyU.OAyU;
-import Controller.OCatalogo.OCatalogo;
+import Controller.OAyU.OAyU;
 import Controller.OCatalogo.OGestionarVideojuegos;
 import Controller.OReseñas.OResenias_Videojuego;
 import View.GUIS_AyU.GUISignUp;

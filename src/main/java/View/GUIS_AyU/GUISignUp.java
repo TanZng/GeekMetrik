@@ -5,11 +5,10 @@
  */
 package View.GUIS_AyU;
 
-import Controller.AyU.OAyU;
+import Controller.OAyU.OAyU;
 import Controller.OCatalogo.OCatalogo;
 import View.GUIS_Catalogo.GUI_Catalogo;
 import java.awt.Image;
-import java.io.File;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;

@@ -6,7 +6,7 @@
 package View.GUIS_Resenias;
 
 import View.GUIS_AyU.GUI_MiPerfil;
-import Controller.AyU.OAyU;
+import Controller.OAyU.OAyU;
 
 /**
  *
