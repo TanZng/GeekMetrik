@@ -58,6 +58,8 @@ CREATE TABLE IF NOT EXISTS GeekMetrik.Videojuego (
     ON DELETE SET NULL
     ON UPDATE CASCADE);
 
+ALTER TABLE GeekMetrik.Videojuego MODIFY Estrellas DECIMAL(9, 1)
+
 -- -----------------------------------------------------
 -- Tabla códigos
 -- -----------------------------------------------------
@@ -106,4 +108,4 @@ CREATE TABLE IF NOT EXISTS GeekMetrik.Reseñas (
 );
 
 INSERT INTO Usuario VALUES("Admin", "", "", "admin@admin.com", NULL, "Admin", "Admin", 0);
-INSERT INTO Admin VALUES("Admin", "Editor");
+INSERT INTO Admin VALUES("Admin", "Super admin");
