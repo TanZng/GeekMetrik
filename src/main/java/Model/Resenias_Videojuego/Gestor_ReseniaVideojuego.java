@@ -40,7 +40,7 @@ public class Gestor_ReseniaVideojuego {
         this.resenias = reseñas;
     }
     
-    //Escribir reseña (Añadir resenia) (Construcción)
+    //Escribir reseña (Añadir resenia)
     public boolean aniadir_resenia(int estrellas,String titulo_resenia, String contenido,String user_name,int videojuego_id){
         boolean exito = false;
         int geek_id = 0;
@@ -75,11 +75,9 @@ public class Gestor_ReseniaVideojuego {
         } catch (Exception e) {
 
         }
-
-        System.out.print(geek_id);
         
         String sql = ("INSERT INTO Reseñas(ID_Vid,IDGeek,Titulo,Reseña,Calificacion)VALUES(?,?,?,?,?)");
-        Resenia nueva_resenia = new Resenia(estrellas,titulo_resenia,contenido,4,0,videojuego_id);
+        Resenia nueva_resenia = new Resenia(estrellas,titulo_resenia,contenido,geek_id,0,videojuego_id);
         try {
             Conexion conectar = new Conexion();
             Connection signal;
