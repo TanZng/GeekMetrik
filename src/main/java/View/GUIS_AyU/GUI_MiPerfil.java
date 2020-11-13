@@ -1,6 +1,7 @@
 package View.GUIS_AyU;
 
 import Controller.OCatalogo.OCatalogo;
+import Controller.OReseñas.OResenias_Videojuego;
 import View.GUIS_Catalogo.GUI_Catalogo;
 import View.GUIS_Resenias.GUI_Mis_Resenias;
 
@@ -303,6 +304,7 @@ public class GUI_MiPerfil extends javax.swing.JFrame {
     private void jButtonMisReseñasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMisReseñasActionPerformed
         // TODO add your handling code here:
         GUI_Mis_Resenias guiMR = new GUI_Mis_Resenias();
+        OResenias_Videojuego con = new OResenias_Videojuego(guiMR);
         guiMR.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButtonMisReseñasActionPerformed

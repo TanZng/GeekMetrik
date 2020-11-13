@@ -22,6 +22,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 import java.util.Objects;
+import java.util.Random;
 
 /**
  *
@@ -42,6 +43,7 @@ public class OResenias_Videojuego implements ActionListener{
     private GUI_Gestionar_Resenias Gui_gestora_resenias;
     private GUI_EscribirResenia Gui_escritora;
     private GUI_Ver_Resenias Gui_reseñas_videojuegoP;
+    private GUI_Mis_Resenias mis_resenias;
     
     //Corroborar autenticacion
     private GUILogin login = new GUILogin();
@@ -97,6 +99,12 @@ public class OResenias_Videojuego implements ActionListener{
                     cargar_resenias();
                 }
             }
+        }else if(mis_resenias != null){
+            if(actionEvent.getSource() == mis_resenias.jButtonEliminar){
+                eliminar_reseña_mis();
+                limpiar_mis_resenias();
+                listar_mis_resenias(mis_resenias.jTableRes);
+            }
         }
     }
     
@@ -133,6 +141,14 @@ public class OResenias_Videojuego implements ActionListener{
         this.Gui_reseñas_videojuegoP.r1 = null;
         this.Gui_reseñas_videojuegoP.r2 = null;
         this.Gui_reseñas_videojuegoP.r3 = null;
+    }
+    
+    //Mis reseñas
+    public OResenias_Videojuego(GUI_Mis_Resenias mis_resenias){
+        this.mis_resenias = mis_resenias;
+        listar_mis_resenias(this.mis_resenias.jTableRes);
+        this.mis_resenias.jButtonEliminar.addActionListener(this);
+        this.mis_resenias.jButtonRegresar.addActionListener(this);
     }
     //Metodo para la funcionalidad del gestor de reseñas de videojuegos y mis reseñas
     public void eliminar_reseña() {
@@ -280,5 +296,42 @@ public class OResenias_Videojuego implements ActionListener{
                 x++;
         }
         return x;
+    }
+    
+    //Metodo para la funcionalidad del gestor de reseñas de videojuegos
+    public void listar_mis_resenias(JTable tabla){
+        this.Modelo = (DefaultTableModel) tabla.getModel();
+        List<Resenia> lista = Gestor_resenias.listar_mis_resenias(login.autenticado.getID_User());
+        Object[] objeto = new Object[5];
+        Random random = new Random();
+        for (int i = 0; i < lista.size(); i++) {
+            objeto[0] = lista.get(i).getId_videojuego_asociado();
+            objeto[1] = lista.get(i).getTitulo_resenia();
+            objeto[2] = lista.get(i).getContenido();
+            objeto[3] = lista.get(i).getPuntuacion();
+            objeto[4] = random.nextInt(i+2%200);
+            Modelo.addRow(objeto);
+        }
+        tabla.setModel(Modelo);
+    }
+    
+    public void eliminar_reseña_mis() {
+        int fila = mis_resenias.jTableRes.getSelectedRow();
+        if (fila == -1) {
+            JOptionPane.showMessageDialog(mis_resenias, "Selecciona una fila, por favor.");
+        } else {
+            int id_resenia = Integer.parseInt((String) mis_resenias.jTableRes.getValueAt(fila, 0).toString());
+            Gestor_resenias.eliminar_resenia(id_resenia);
+            JOptionPane.showMessageDialog(mis_resenias, "Reseña eliminada.");
+        }
+        limpiar_resenias();
+    }
+    
+    //Metodo para la funcionalidad del gestor de reseñas de videojuegos y mis reseñas
+    public void limpiar_mis_resenias(){
+        for (int i = 0; i < mis_resenias.jTableRes.getRowCount(); i++) {
+            Modelo.removeRow(i);
+            i = i - 1;
+        }
     }
 }

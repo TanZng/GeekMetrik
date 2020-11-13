@@ -194,8 +194,8 @@ public class Gestor_ReseniaVideojuego {
     }
     
     
-    public ListaResenias listar_misresenias(int id_geek_resenias){
-        ListaResenias mis_resenias = new ListaResenias();
+    public List<Resenia> listar_mis_resenias(int id_geek){
+        List<Resenia> resenias_lista = new ArrayList<>();
         try {
             Conexion conectar = new Conexion();
             Connection signal;
@@ -203,21 +203,23 @@ public class Gestor_ReseniaVideojuego {
             ResultSet rs;
             
             signal = conectar.getConexion();
-            ps = signal.prepareStatement("SELECT * FROM Reseñas WHERE IDGeek = '%d' ", id_geek_resenias);
+            ps = signal.prepareStatement("SELECT * FROM Reseñas WHERE IDGeek = ?");
+            ps.setInt(1, id_geek);
             rs = ps.executeQuery();
             while (rs.next()) {
-                int id_resenia = (rs.getInt(1));         //Obtiene el id de la reseña
-                int id_videojuego = (rs.getInt(2));     // Obtiene el id del videojuego asociado
-                int id_geek = (rs.getInt(3));           // Obtiene el id del geek asociado
+                int id_reseña = (rs.getInt(1));         //Obtiene el id de la reseña
+                int id_vid = (rs.getInt(2));     // Obtiene el id del videojuego asociado
+                int id_gee = (rs.getInt(3));        // Obtiene el id del geek asociado
                 String titulo = (rs.getString(4));      // Obtiene el titulo de la reseña
                 String contenido = (rs.getString(5));   // Obtiene el contenido de la reseña
                 int calificación = (rs.getInt(6));      // Obtiene la cantidad de estrellas
-                Resenia resenia = new Resenia(calificación,titulo,contenido,id_geek,id_resenia,id_videojuego);
-                mis_resenias.aniadir_resenia(resenia);
+
+                Resenia resenia = new Resenia(calificación,titulo,contenido,id_gee,id_reseña,id_vid);
+                resenias_lista.add(resenia);
             }
         } catch (Exception e) {
         }
-        return mis_resenias;
+        return resenias_lista;
     }
     
     public ListaResenias listar_resenias_particulares(int id_videojuego){
