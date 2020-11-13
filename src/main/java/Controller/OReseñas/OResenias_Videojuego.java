@@ -221,7 +221,7 @@ public class OResenias_Videojuego implements ActionListener{
         else{
             titulo.setText("Nada que mostrar :(");
             estrellas.setText(String.valueOf(404));
-            geek.setText("@Geek_desconocido");
+            geek.setText("@Geek desconocido");
         }
     }
     //Prepara los labels

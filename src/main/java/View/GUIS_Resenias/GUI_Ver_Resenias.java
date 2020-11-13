@@ -141,6 +141,7 @@ public class GUI_Ver_Resenias extends javax.swing.JFrame {
         jTextAreaContenido1.setBackground(new java.awt.Color(91, 91, 91));
         jTextAreaContenido1.setColumns(20);
         jTextAreaContenido1.setForeground(new java.awt.Color(255, 255, 255));
+        jTextAreaContenido1.setLineWrap(true);
         jTextAreaContenido1.setRows(5);
         jScrollPane1.setViewportView(jTextAreaContenido1);
 
@@ -242,6 +243,7 @@ public class GUI_Ver_Resenias extends javax.swing.JFrame {
         jTextAreaContenido2.setBackground(new java.awt.Color(91, 91, 91));
         jTextAreaContenido2.setColumns(20);
         jTextAreaContenido2.setForeground(new java.awt.Color(255, 255, 255));
+        jTextAreaContenido2.setLineWrap(true);
         jTextAreaContenido2.setRows(5);
         jScrollPane2.setViewportView(jTextAreaContenido2);
 
@@ -343,6 +345,7 @@ public class GUI_Ver_Resenias extends javax.swing.JFrame {
         jTextAreaContenido3.setBackground(new java.awt.Color(91, 91, 91));
         jTextAreaContenido3.setColumns(20);
         jTextAreaContenido3.setForeground(new java.awt.Color(255, 255, 255));
+        jTextAreaContenido3.setLineWrap(true);
         jTextAreaContenido3.setRows(5);
         jScrollPane3.setViewportView(jTextAreaContenido3);
 

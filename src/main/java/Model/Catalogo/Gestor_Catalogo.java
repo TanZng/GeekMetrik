@@ -33,6 +33,33 @@ public class Gestor_Catalogo {
         this.catalogo = catalogo;
     }
 
+    public Videojuego get_Videojuego(int id_videojuego){
+        Videojuego v = null;
+        String sql = "select * from Videojuego where ID_Videojuego= ?";
+        try {
+            con = conectar.getConexion();
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, id_videojuego );
+            rs = ps.executeQuery();
+            while (rs.next()) {
+
+                int id = (rs.getInt(1)); //id videojuego
+                String titulo = (rs.getString(2)); // titulo
+                String desc = (rs.getString(4)); // Descrip
+                String gen = (rs.getString(5)); // Categoria / genero
+                Double star = (rs.getDouble(3)); // estrellas
+
+                // se salta la imagen
+                String admin = ((rs.getString(6))); //Obtiene ID ADMIN
+                v = new Videojuego(titulo, desc, 0, admin, star, gen, id, null);
+            }
+        } catch (Exception e) {
+        }
+        return v;
+
+    }
+
+
     public List<Videojuego> listar_Videojuegos(){
         List<Videojuego> datos = new ArrayList<>();
         try {
