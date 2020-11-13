@@ -43,27 +43,42 @@ public class Gestor_ReseniaVideojuego {
     //Escribir reseña (Añadir resenia) (Construcción)
     public boolean aniadir_resenia(int estrellas,String titulo_resenia, String contenido,String user_name,int videojuego_id){
         boolean exito = false;
-        int  geek_id = 3;
-        String consulta = String.format("SELECT IDGeek FROM Geek WHERE Username =  '%s'",user_name);
+        int geek_id = 0;
+        
+        // Conectamos con la base de datos
+        Conexion SQL = new Conexion();
+        Connection con = SQL.getConexion();
+        
+        // Declaramos instruccion para tabla Geek
+        String consulta = "SELECT IDGeek FROM Geek WHERE Username = ?";
+        
+        PreparedStatement ps;
+        ResultSet rs;
+
         try {
-            Conexion conectar = new Conexion();
-            Connection signal;
-            PreparedStatement ps;
-            ResultSet rs;
-            signal = conectar.getConexion();
-            ps = signal.prepareStatement(consulta);
+
+            con = SQL.getConexion();
+            ps = con.prepareStatement(consulta);
+            ps.setString(1, user_name);
             rs = ps.executeQuery();
-            geek_id = (rs.getInt(0)); 
+            
+            if( rs.next() ) {
+                
+                geek_id = (rs.getInt(1));
+                
+            }
             
         } catch (Exception e) {
+            
         }
+        
         System.out.print(geek_id);
+        
         String sql = ("INSERT INTO Reseñas(ID_Vid,IDGeek,Titulo,Reseña,Calificacion)VALUES(?,?,?,?,?)");
         Resenia nueva_resenia = new Resenia(estrellas,titulo_resenia,contenido,4,0,videojuego_id);
         try {
             Conexion conectar = new Conexion();
             Connection signal;
-            PreparedStatement ps;
             signal = conectar.getConexion();
             
             ps = signal.prepareStatement(sql);

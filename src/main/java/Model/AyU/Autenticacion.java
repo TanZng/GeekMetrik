@@ -130,9 +130,11 @@ public class Autenticacion {
             if ( rs.next() ) {
                 
                 bio = (rs.getString(1));
-                int id = (rs.getInt(4));
+                int id = (rs.getInt(2));
                 GUILogin.bio = bio;
                 this.autenticado.setID_User(id);
+                
+                System.out.println(this.autenticado.getID_User());
                 
             }
             
