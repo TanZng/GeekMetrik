@@ -102,6 +102,7 @@ public class GUI_Ver_Resenias extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(91, 91, 91));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
 
+        labelImagen1.setForeground(new java.awt.Color(255, 255, 255));
         labelImagen1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelImagen1.setText("Imagen");
 
@@ -204,6 +205,7 @@ public class GUI_Ver_Resenias extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(91, 91, 91));
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
 
+        labelImagen2.setForeground(new java.awt.Color(255, 255, 255));
         labelImagen2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelImagen2.setText("Imagen");
 
@@ -306,6 +308,7 @@ public class GUI_Ver_Resenias extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(91, 91, 91));
         jPanel3.setForeground(new java.awt.Color(255, 255, 255));
 
+        labelImagen3.setForeground(new java.awt.Color(255, 255, 255));
         labelImagen3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelImagen3.setText("Imagen");
 
