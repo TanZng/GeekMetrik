@@ -21,6 +21,8 @@ Edite el archivo **Conexion.java** y en el campo de password coloque su contrase
 
 Ubicada en GeekMetrik-master\src\main\java\Model\Utilerias\Conexion.java
 
+Finalmente, asegurese que use el puerto por default 3306 para MySQL.
+
 ### Ejecutar
 Abra en un IDE y ejecute GUI_Catalogo.java
 
