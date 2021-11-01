@@ -1,6 +1,6 @@
 
 
-# **GeekMetrik** <img src="https://github.com/TanZng/GeekMetrik/blob/master/src/main/resources/GeekMetrik.png" width="100" align="left" />
+# **GeekMetrik** <img src="https://raw.githubusercontent.com/TanZng/GeekMetrik/master/src/main/resources/GeekMetrik.png" width="100" align="left" />
  
  
  ---
